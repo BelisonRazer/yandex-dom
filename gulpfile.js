@@ -24,7 +24,7 @@ gulp.task('styles', function() {
 	//.pipe(rename({ suffix: '.min', prefix : '' }))
 	//.pipe(autoprefixer(['last 15 versions']))
 	//.pipe(cleancss( {level: { 1: { specialComments: 0 } } })) // Opt., comment out when debugging
-	.pipe(gulp.dest('app/public'))
+	.pipe(gulp.dest('app/public'));
 	//.pipe(browserSync.stream())
 });
 
@@ -51,14 +51,22 @@ gulp.task('images', function () {
 		// .pipe(ignore.exclude('./styles/**/*'))
 		.pipe(newer('app/public'))
 		.pipe(debug({title: 'header'}))
-		.pipe(gulp.dest('app/public/blocks/header'))
+		.pipe(gulp.dest('app/public/blocks/header'));
+});
+
+gulp.task('images2', function () {
+	return gulp.src(['app/blocks/heading/**/*.*', '!app/blocks/**/**/styles/*'], {since: gulp.lastRun("images")})
+		// .pipe(ignore.exclude('./styles/**/*'))
+		.pipe(newer('app/public'))
+		.pipe(debug({title: 'heading'}))
+		.pipe(gulp.dest('app/public/blocks/heading'));
 });
 
 gulp.task('img', function () {
 	return gulp.src('app/img/**/*.*', {since: gulp.lastRun("img")})
 		.pipe(newer('app/public'))
 		.pipe(debug({title: 'soft-img'}))
-		.pipe(gulp.dest('app/public/img'))
+		.pipe(gulp.dest('app/public/img'));
 });
 
 //-------------- js, rsync --------------
@@ -70,7 +78,7 @@ gulp.task('js', function() {
 		])
 	.pipe(concat('scripts.min.js'))
 	// .pipe(uglify()) // Mifify js (opt.)
-	.pipe(gulp.dest('app/public/js'))
+	.pipe(gulp.dest('app/public/js'));
 	// .pipe(browserSync.reload({ stream: true }))
 });
 
@@ -89,7 +97,8 @@ gulp.task('js', function() {
 // 	}))
 // });
 
-gulp.task('build', gulp.series('clean', gulp.parallel('styles', 'assets'), 'fonts', 'js', 'images', 'img'));
+gulp.task('build', gulp.series('clean', gulp.parallel('styles', 'assets'), 
+'fonts', 'js', 'images2', 'images', 'img'));
 
 //-------------- watch, sync --------------
 
@@ -106,7 +115,7 @@ gulp.task('watch', function () {
 });
 
 gulp.task('serve', function () {
-	browserSync.init({server: 'app/public'})
+	browserSync.init({server: 'app/public'});
 });
 
 gulp.task('dev', gulp.series('build', gulp.parallel('watch', 'serve')));
