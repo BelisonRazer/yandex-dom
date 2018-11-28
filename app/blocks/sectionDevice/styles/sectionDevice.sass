@@ -1,0 +1,102 @@
+@import "../sass/vars.sass";
+    
+.sectionDevice
+    display: grid
+
+    grid-template-columns: [col1-favoriteDevice] 1285px
+    grid-template-rows: [row1-favoriteDevice] 70px [row2-boxCardDevice] 120px
+
+    margin: 0 auto 9px auto
+
+    width: 1366px
+
+    justify-content: center
+
+    //Row 1
+    &__boxFavoriteDevice
+        display: grid
+
+        grid-column: col1-favoriteDevice
+        grid-row: row1-favoriteDevice
+        grid-template-columns: [col1-title] 207px [col2-list] auto [col3-form] 80px
+        grid-gap: 13px
+
+        margin-bottom: 10px
+
+    &__boxFavoriteTitle
+        display: grid
+
+        grid-column: col1-title
+
+        justify-content: flex-start
+        align-content: center
+
+        // margin-left: 40px
+
+        width: 208px
+
+    &__radioGroup
+        display: grid
+
+        grid-column: col2-list
+        grid-auto-flow: column
+        grid-gap: 10px
+
+        justify-content: flex-start
+        align-content: center
+
+    &__boxForm
+        display: grid
+
+        grid-column: col3-form
+
+        justify-content: flex-end
+        align-content: flex-end
+
+        // margin-right: 40px
+    
+    &__image-arrow-right
+        transform: scale(-1, 1)
+
+        padding-right: 15px
+
+    //Row 2
+    &__boxCardDevice
+        display: grid
+
+        grid-column: col1-favoriteDevice
+        grid-row: row2-boxCardDevice
+        grid-auto-flow: column
+        grid-gap: 15px
+
+        justify-content: flex-start
+
+        overflow: hidden
+        width: 100vw
+        // max-width: 100vw
+
+    &__scrollCard
+        display: grid
+
+        width: 200px
+
+    &__scrollCard:first-child
+        // margin-left: 40px
+
+
+
+    &__imageCard
+        padding: 14px 0 0 14px
+
+    &__titleCard
+        padding: 0 14px 0 14px
+
+    &__titleCard:last-child
+        padding-bottom: 14px
+
+    &__innerCard
+        display: grid
+
+        justify-content: flex-start
+
+        letter-spacing: 0

@@ -10,13 +10,13 @@ var gulp          = require('gulp'),
 		rename        = require('gulp-rename'),
 		autoprefixer  = require('gulp-autoprefixer'),
 		notify        = require('gulp-notify'),
-		rsync         = require('gulp-rsync');
+		rsync         = require('gulp-rsync'),
 
-		newer         = require('gulp-newer'); // filtered new file
-		gulps         = require('gulp-series');
-		debug         = require('gulp-debug');
-		del           = require('del');
-		gulpIf        = require('gulp-if');
+		newer         = require('gulp-newer'), // filtered new file
+		gulps         = require('gulp-series'),
+		debug         = require('gulp-debug'),
+		del           = require('del'),
+		gulpIf        = require('gulp-if'),
 
 gulp.task('styles', function() {
 	return gulp.src('app/'+syntax+'/**/*.'+syntax+'')
@@ -46,6 +46,7 @@ gulp.task('fonts', function () {
         .pipe(gulp.dest('app/public/fonts'));
 });
 
+// BLOCK IMG
 gulp.task('images', function () {
 	return gulp.src(['app/blocks/header/**/*.*', '!app/blocks/**/**/styles/*'], {since: gulp.lastRun("images")})
 		// .pipe(ignore.exclude('./styles/**/*'))
@@ -60,6 +61,23 @@ gulp.task('images2', function () {
 		.pipe(newer('app/public'))
 		.pipe(debug({title: 'heading'}))
 		.pipe(gulp.dest('app/public/blocks/heading'));
+});
+
+gulp.task('images3', function () {
+	return gulp.src(['app/blocks/sectionDevice/**/*.*', '!app/blocks/**/**/styles/*'], {since: gulp.lastRun("images")})
+		// .pipe(ignore.exclude('./styles/**/*'))
+		.pipe(newer('app/public'))
+		.pipe(debug({title: 'sectionDevice'}))
+		.pipe(gulp.dest('app/public/blocks/sectionDevice'));
+});
+
+// COMMON IMG
+gulp.task('images4', function () {
+	return gulp.src(['app/common/card/**/*.*', '!app/common/**/**/styles/*'], {since: gulp.lastRun("images")})
+		// .pipe(ignore.exclude('./styles/**/*'))
+		.pipe(newer('app/public'))
+		.pipe(debug({title: 'card'}))
+		.pipe(gulp.dest('app/public/common/card'));
 });
 
 gulp.task('img', function () {
@@ -98,7 +116,7 @@ gulp.task('js', function() {
 // });
 
 gulp.task('build', gulp.series('clean', gulp.parallel('styles', 'assets'), 
-'fonts', 'js', 'images2', 'images', 'img'));
+'fonts', 'js', 'images4', 'images3', 'images2', 'images', 'img'));
 
 //-------------- watch, sync --------------
 

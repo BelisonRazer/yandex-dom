@@ -2,33 +2,36 @@
     
 .heading
     display: grid
-    grid-template-columns: repeat(2, 1fr)
+    grid-template-columns: 630px 630px
     grid-template-rows: auto
     grid-gap: 26px
 
-    margin: 0 40px 0 39px
+    width: 100%
 
-    // min-height: 400px
+    margin: 0 auto 19px auto
+
+    justify-content: center
+
+    width: 1366px
 
     //left content
     &__left-box
         display: grid
-        // border: 1px solid red
         overflow: hidden
 
         grid-column: 1
         grid-row: 1
-
         grid-template-columns: repeat(1, 1fr)
-        grid-template-rows: 70px auto
+        grid-template-rows: 70px 330px
 
-        min-width: 631px
+        // margin-left: 40px
 
     &__title
         z-index: 20
 
         &_main
             display: grid
+
             grid-column: 1
             grid-row: 1
 
@@ -37,24 +40,26 @@
 
         &_inner
             display: grid
+
             grid-column: 1
             grid-row: 1
 
             justify-content: flex-start
             align-content: center
 
-
     //one enter
     &__content-left
         display: grid
+
         grid-column: 1 / -1
         grid-row: 2
 
-        grid-template-columns: repeat(3, 1fr)
+        grid-template-columns: 405px 225px
         grid-template-rows: auto
 
     &__image
         display: grid
+
         grid-column: 1 / -1
         grid-row: 1
 
@@ -65,7 +70,8 @@
 
     &__inner-content-left
         display: grid
-        grid-column: 1 / 3
+
+        grid-column: 1
         grid-row: 1
 
         margin: 26px 0 0 25px
@@ -77,6 +83,7 @@
 
     &__text
         display: grid
+
         grid-column: 1
         grid-row: 3
 
@@ -85,31 +92,32 @@
 
     &__weather-box
         display: grid
+
         grid-column: 1
         grid-row: 5
 
         justify-content: flex-start
         align-content: flex-start
-        // align-items: flex-start
 
-        grid-template-columns: 80px 150px
+        grid-template-columns: auto
         grid-template-rows: auto
 
     &__weather-street
-        grid-column: 2
+        grid-column: 1
         grid-row: 1
+
+        padding-left: 80px
 
     &__weather-street::before
         position: absolute
 
-        content: "+23"
+        content: "+19"
 
         font-size: 36px
         color: #333333
         font-weight: 800
 
-        top: 310px
-        left: 62px
+        padding: 10px 0 0 0
 
     &__weather-street_img::after
         position: relative
@@ -121,48 +129,64 @@
 
         content: ""
         
-        top: 45px
-        left: 7px
+        padding: 0 0 53px 45px
 
     &__weather-home
         grid-column: 1
         grid-row: 1
         
-
     &__weather-home::before
         position: absolute
 
-        content: "+19"
+        content: "+23"
 
         font-size: 36px
         color: #333333
         font-weight: 800
 
-        top: 310px
-        left: 142px
+        padding: 10px 0 0 0
 
     // two enter (inner)
     &__scroll-boxes
         display: grid
-        grid-column: 3
+
+        grid-column: 2
         grid-row: 1
 
-        margin: 26px 25px 0 25px
-
-        min-width: 236.5px
+        margin: 25px 25px 0 0
 
     &__scrollWrap
         display: grid
 
         grid-template-columns: 1fr
-        grid-template-rows: 1fr 1fr minmax(10%, 50px)
+        grid-template-rows: auto
         
-
         grid-gap: 15px
 
     &__scrollCard
         display: grid
 
+        height: 120px
+
+    &__scrollCard:nth-child(3)::before
+        display: block
+
+        position: absolute
+
+        content: ""
+
+        background: #F7F7F7 url("/blocks/heading/images/ M.svg") no-repeat center
+
+        width: 200px
+        height: 35px
+
+        border-top-left-radius: 20px
+        border-top-right-radius: 20px
+
+    &__scrollCard:hover::before
+        opacity: 0
+
+        cursor: pointer
 
     //right content
     &__right-box
@@ -172,13 +196,13 @@
         grid-row: 1
 
         grid-template-columns: repeat(2, 1fr)
-        grid-template-rows: 70px auto
+        grid-template-rows: 70px 330px
 
-        // min-width: 683px
-        min-width: 631px
+        // margin-right: 40px
 
     &__title-right
         display: grid
+
         grid-column: 1
         grid-row: 1
 
@@ -187,17 +211,19 @@
 
     &__form-box
         display: grid
+
         grid-column: 2
         grid-row: 1
 
         justify-content: flex-end
         align-content: center
-
-    &__form
-
+        
+        padding-top: 2px
     
     &__image-arrow-right
         transform: scale(-1, 1)
+
+        padding-right: 15px
 
     &__content-right
         display: grid
@@ -208,26 +234,28 @@
     &__favorite-box
         display: grid
 
-        grid-template-columns: repeat(3, 1fr)
-        grid-template-rows: 1fr 1fr 1fr
+        grid-template-columns: repeat(3, 200px)
+        grid-template-rows: repeat(3, 100px)
 
         grid-gap: 15px
 
     &__favorite-card
         display: grid
 
-    &__inner-card
+    &__innerCard
         display: grid
 
         justify-content: flex-start
 
-    &__image-card
+        letter-spacing: 0
+
+    &__imageCard
         padding: 14px 0 0 14px
 
-    &__title-card
+    &__titleCard
         padding: 0 14px 0 14px
 
-    &__title-card:last-child
+    &__titleCard:last-child
         padding-bottom: 14px
     
 

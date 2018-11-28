@@ -1,0 +1,27 @@
+@import "../sass/vars.sass";
+
+.radioGroup
+
+    &__input
+        position: absolute
+        z-index: -1
+
+        opacity: 0
+
+        margin: 10px 0 0 7px
+
+    &__text
+        display: grid
+
+        padding: 7.6px 13.1px
+        
+        align-items: center
+        justify-items: center
+
+        border-radius: 20px
+        background: #f7f7f7
+
+        cursor: pointer
+
+    &__item input:checked + &__text
+        background: #ffd93e

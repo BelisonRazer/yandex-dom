@@ -3,12 +3,13 @@
 .header
     display: grid
 
-    width: 100%
+    width: 1366px
 
-    grid-template-columns: auto
+    margin: 0 auto 4px auto
+
+    grid-template-columns: 1285px
     grid-template-rows: 92px 1px
-
-    margin-bottom: 30px
+    justify-content: center
 
     color: #333333
 
@@ -18,7 +19,7 @@
     &__menu
         display: grid
 
-        grid-column: 1 / -1
+        grid-column: 1
         grid-row: 1
         
         grid-template-columns: [item1 col-1-start] auto [gap1] 52px [item2 col-2-start] auto [gap2] 28px [item3 col-3-start] auto [gap3] 26px [item4 col-4-start] auto [gup4] auto
@@ -31,7 +32,7 @@
         justify-content: flex-start
         align-items: center
 
-        margin: 0 40px 0 39px
+        // margin: 0 40px 0 40px
         
     &__item1
         grid-column: item1
@@ -41,14 +42,51 @@
     &__item2
         grid-column: item2
 
+        opacity: 0.6
+
     &__item3
         grid-column: item3
 
+        opacity: 0.6
+
     &__item4
         grid-column: item4
+
+        opacity: 0.6
 
     &__outline
         grid-column: 1 / -1
         grid-row: 2
 
         margin: 0
+
+
+
+    &__menu, a
+        text-decoration: none
+
+        cursor: pointer
+
+    &__item2:hover
+        opacity: 1
+
+    &__item3:hover
+        opacity: 1
+
+    &__item4:hover
+        opacity: 1
+
+    &__item2:visited
+        color: #333333
+        opacity: 0.6
+
+    &__item3:visited
+        color: #333333
+        opacity: 0.6
+
+    &__item4:visited
+        color: #333333
+        opacity: 0.6
+
+.active
+    opacity: 1
