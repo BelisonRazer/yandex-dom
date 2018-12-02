@@ -2,29 +2,24 @@
     
 .heading
     display: grid
-    grid-template-columns: 630px 630px
+
+    grid-template-columns: [col1-leftBox] 630px [col2-rightBox] 630px
     grid-template-rows: auto
     grid-gap: 26px
-
-    width: 100%
 
     margin: 0 auto 19px auto
 
     justify-content: center
 
-    width: 1366px
-
-    //left content
+    //LEFT CONTENT
     &__left-box
         display: grid
+
         overflow: hidden
 
-        grid-column: 1
-        grid-row: 1
+        grid-column: col1-leftBox
         grid-template-columns: repeat(1, 1fr)
         grid-template-rows: 70px 330px
-
-        // margin-left: 40px
 
     &__title
         z-index: 20
@@ -188,17 +183,13 @@
 
         cursor: pointer
 
-    //right content
+    //RIGHT CONTENT
     &__right-box
         display: grid
 
-        grid-column: 2
-        grid-row: 1
-
+        grid-column: col2-rightBox
         grid-template-columns: repeat(2, 1fr)
         grid-template-rows: 70px 330px
-
-        // margin-right: 40px
 
     &__title-right
         display: grid

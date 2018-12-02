@@ -3,36 +3,35 @@
 .header
     display: grid
 
-    width: 1366px
+    justify-content: center
 
     margin: 0 auto 4px auto
-
-    grid-template-columns: 1285px
-    grid-template-rows: 92px 1px
-    justify-content: center
 
     color: #333333
 
     font-family: $default-font
     font-weight: 800
 
+    &__navigation
+        display: grid
+
+        grid-template-columns: [col-menu] auto
+        grid-template-rows: [row-menu] 92px
+
+        justify-content: center
+
     &__menu
         display: grid
 
-        grid-column: 1
-        grid-row: 1
+        width: 1285px
         
         grid-template-columns: [item1 col-1-start] auto [gap1] 52px [item2 col-2-start] auto [gap2] 28px [item3 col-3-start] auto [gap3] 26px [item4 col-4-start] auto [gup4] auto
         grid-template-rows: auto
 
         grid-gap: 0px
 
-        text-align: center
-
         justify-content: flex-start
         align-items: center
-
-        // margin: 0 40px 0 40px
         
     &__item1
         grid-column: item1
@@ -55,10 +54,9 @@
         opacity: 0.6
 
     &__outline
-        grid-column: 1 / -1
-        grid-row: 2
-
         margin: 0
+
+        min-width: 100vw
 
 
 

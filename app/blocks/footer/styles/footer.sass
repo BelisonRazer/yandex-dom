@@ -1,0 +1,48 @@
+@import "../sass/vars.sass";
+
+.footer
+    display: grid
+
+    grid-template-columns: [col-boxParts] 1285px
+
+    justify-content: center
+    align-content: flex-end
+
+    min-height: calc(100vh - 750px);
+
+    margin-bottom: 22px
+    
+    &__boxParts
+        display: grid
+
+        grid-template-columns: auto auto
+
+        justify-content: space-between
+        align-content: center
+
+        color: $text-card-time
+
+        font-family: $text-font
+        font-weight: 400
+        font-size: 12px
+
+        letter-spacing: 0.01px
+
+    &__part
+        display: grid
+
+        grid-auto-flow: column
+        grid-column: 1
+        grid-gap: 15px
+
+        &_yandex
+            display: grid
+
+            grid-column: 2
+
+    &__part, a
+        text-decoration: none
+
+        color: $text-card-time
+
+        cursor: pointer

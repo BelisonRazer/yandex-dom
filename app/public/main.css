@@ -1,23 +1,25 @@
 .header {
   display: grid;
-  width: 1366px;
-  margin: 0 auto 4px auto;
-  grid-template-columns: 1285px;
-  grid-template-rows: 92px 1px;
   justify-content: center;
+  margin: 0 auto 4px auto;
   color: #333333;
   font-family: "arial-bold-mt", sans-serif;
   font-weight: 800;
 }
 
+.header__navigation {
+  display: grid;
+  grid-template-columns: [col-menu] auto;
+  grid-template-rows: [row-menu] 92px;
+  justify-content: center;
+}
+
 .header__menu {
   display: grid;
-  grid-column: 1;
-  grid-row: 1;
+  width: 1285px;
   grid-template-columns: [item1 col-1-start] auto [gap1] 52px [item2 col-2-start] auto [gap2] 28px [item3 col-3-start] auto [gap3] 26px [item4 col-4-start] auto [gup4] auto;
   grid-template-rows: auto;
   grid-gap: 0px;
-  text-align: center;
   justify-content: flex-start;
   align-items: center;
 }
@@ -43,9 +45,8 @@
 }
 
 .header__outline {
-  grid-column: 1 / -1;
-  grid-row: 2;
   margin: 0;
+  min-width: 100vw;
 }
 
 .header__menu, .header a {
@@ -86,20 +87,17 @@
 
 .heading {
   display: grid;
-  grid-template-columns: 630px 630px;
+  grid-template-columns: [col1-leftBox] 630px [col2-rightBox] 630px;
   grid-template-rows: auto;
   grid-gap: 26px;
-  width: 100%;
   margin: 0 auto 19px auto;
   justify-content: center;
-  width: 1366px;
 }
 
 .heading__left-box {
   display: grid;
   overflow: hidden;
-  grid-column: 1;
-  grid-row: 1;
+  grid-column: col1-leftBox;
   grid-template-columns: repeat(1, 1fr);
   grid-template-rows: 70px 330px;
 }
@@ -245,8 +243,7 @@
 
 .heading__right-box {
   display: grid;
-  grid-column: 2;
-  grid-row: 1;
+  grid-column: col2-rightBox;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 70px 330px;
 }
@@ -312,8 +309,7 @@
   display: grid;
   grid-template-columns: [col1-favoriteDevice] 1285px;
   grid-template-rows: [row1-favoriteDevice] 70px [row2-boxCardDevice] 120px;
-  margin: 0 auto 9px auto;
-  width: 1366px;
+  margin: 0 auto 22px auto;
   justify-content: center;
 }
 
@@ -363,7 +359,7 @@
   grid-gap: 15px;
   justify-content: flex-start;
   overflow: hidden;
-  width: 100vw;
+  min-width: 100vw;
 }
 
 .sectionDevice__scrollCard {
@@ -387,6 +383,45 @@
   display: grid;
   justify-content: flex-start;
   letter-spacing: 0;
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: [col-boxParts] 1285px;
+  justify-content: center;
+  align-content: flex-end;
+  min-height: calc(100vh - 750px);
+  margin-bottom: 22px;
+}
+
+.footer__boxParts {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: space-between;
+  align-content: center;
+  color: #858585;
+  font-family: "arial-regular", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 0.01px;
+}
+
+.footer__part {
+  display: grid;
+  grid-auto-flow: column;
+  grid-column: 1;
+  grid-gap: 15px;
+}
+
+.footer__part_yandex {
+  display: grid;
+  grid-column: 2;
+}
+
+.footer__part, .footer a {
+  text-decoration: none;
+  color: #858585;
+  cursor: pointer;
 }
 
 .radioGroup__input {
