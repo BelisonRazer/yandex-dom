@@ -3,10 +3,11 @@
 .sectionDevice
     display: grid
 
-    grid-template-columns: [col1-favoriteDevice] 1285px
-    grid-template-rows: [row1-favoriteDevice] 70px [row2-boxCardDevice] 120px
+    grid-template-columns: [space-l] 1fr 1285px [space-r] 1fr
+    grid-template-rows: 70px auto
+    grid-template-areas: ". favorite ." "device device device"
 
-    margin: 0 auto 22px auto
+    margin: 0 auto 6px auto
 
     justify-content: center
 
@@ -14,8 +15,7 @@
     &__boxFavoriteDevice
         display: grid
 
-        grid-column: col1-favoriteDevice
-        grid-row: row1-favoriteDevice
+        grid-area: favorite
         grid-template-columns: [col1-title] 207px [col2-list] auto [col3-form] 80px
         grid-gap: 13px
 
@@ -58,21 +58,30 @@
     &__boxCardDevice
         display: grid
 
-        grid-column: col1-favoriteDevice
-        grid-row: row2-boxCardDevice
+        height: 136px
+
+        grid-area: device
         grid-auto-flow: column
         grid-gap: 15px
 
         justify-content: flex-start
 
-        overflow: hidden
+        overflow-x: scroll
+        -ms-overflow-style: none
+        overflow: -moz-hidden-unscrollable
         
-        min-width: 100vw
+        width: 100vw
+    
+    &__boxCardDevice::-webkit-scrollbar
+        width: 0
 
     &__scrollCard
         display: grid
 
         width: 200px
+
+    &__scrollCard:first-child
+        margin-left: calc((100vw - 1285px) / 2)
 
     &__imageCard
         padding: 14px 0 0 14px
@@ -89,3 +98,15 @@
         justify-content: flex-start
 
         letter-spacing: 0
+
+// @media screen and (max-device-width: 2048px)
+//     .sectionDevice__boxCardDevice
+//         max-width: calc(100vw - 28%)
+
+// @media screen and (max-device-width: 1680px)
+//     .sectionDevice__boxCardDevice
+//         max-width: calc(100vw - 13%)
+
+// @media screen and (device-width: 1366px)
+//     .sectionDevice__boxCardDevice
+//         max-width: 103%

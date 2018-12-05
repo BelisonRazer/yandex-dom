@@ -15,8 +15,6 @@
     &__left-box
         display: grid
 
-        overflow: hidden
-
         grid-column: col1-leftBox
         grid-template-columns: repeat(1, 1fr)
         grid-template-rows: 70px 330px
@@ -145,15 +143,24 @@
     &__scroll-boxes
         display: grid
 
+        width: 216px
+
         grid-column: 2
         grid-row: 1
 
-        margin: 25px 25px 0 0
+        overflow-y: scroll
+
+    &__scroll-boxes-hidden-scroll-bar
+        display: grid
+
+        width: 232px
+
+        overflow-x: hidden
 
     &__scrollWrap
         display: grid
 
-        grid-template-columns: 1fr
+        grid-template-columns: 200px
         grid-template-rows: auto
         
         grid-gap: 15px
@@ -163,10 +170,19 @@
 
         height: 120px
 
+    &__scrollCard:first-child
+        margin-top: 25px
+
+    &__scrollWrap:hover .heading__scrollCard::before
+        opacity: 0
+        transition-duration: 0.5s
+        transition-timing-function: 1s
+
     &__scrollCard:nth-child(3)::before
         display: block
 
         position: absolute
+        margin-top: 1px
 
         content: ""
 
@@ -178,9 +194,7 @@
         border-top-left-radius: 20px
         border-top-right-radius: 20px
 
-    &__scrollCard:hover::before
-        opacity: 0
-
+    &__scrollCard:hover
         cursor: pointer
 
     //RIGHT CONTENT

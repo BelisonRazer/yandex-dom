@@ -96,7 +96,6 @@
 
 .heading__left-box {
   display: grid;
-  overflow: hidden;
   grid-column: col1-leftBox;
   grid-template-columns: repeat(1, 1fr);
   grid-template-rows: 70px 330px;
@@ -208,14 +207,21 @@
 
 .heading__scroll-boxes {
   display: grid;
+  width: 216px;
   grid-column: 2;
   grid-row: 1;
-  margin: 25px 25px 0 0;
+  overflow-y: scroll;
+}
+
+.heading__scroll-boxes-hidden-scroll-bar {
+  display: grid;
+  width: 232px;
+  overflow-x: hidden;
 }
 
 .heading__scrollWrap {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 200px;
   grid-template-rows: auto;
   grid-gap: 15px;
 }
@@ -225,9 +231,20 @@
   height: 120px;
 }
 
+.heading__scrollCard:first-child {
+  margin-top: 25px;
+}
+
+.heading__scrollWrap:hover .heading__scrollCard::before {
+  opacity: 0;
+  transition-duration: 0.5s;
+  transition-timing-function: 1s;
+}
+
 .heading__scrollCard:nth-child(3)::before {
   display: block;
   position: absolute;
+  margin-top: 1px;
   content: "";
   background: #F7F7F7 url("/blocks/heading/images/ M.svg") no-repeat center;
   width: 200px;
@@ -236,8 +253,7 @@
   border-top-right-radius: 20px;
 }
 
-.heading__scrollCard:hover::before {
-  opacity: 0;
+.heading__scrollCard:hover {
   cursor: pointer;
 }
 
@@ -307,16 +323,16 @@
 
 .sectionDevice {
   display: grid;
-  grid-template-columns: [col1-favoriteDevice] 1285px;
-  grid-template-rows: [row1-favoriteDevice] 70px [row2-boxCardDevice] 120px;
-  margin: 0 auto 22px auto;
+  grid-template-columns: [space-l] 1fr 1285px [space-r] 1fr;
+  grid-template-rows: 70px auto;
+  grid-template-areas: ". favorite ." "device device device";
+  margin: 0 auto 6px auto;
   justify-content: center;
 }
 
 .sectionDevice__boxFavoriteDevice {
   display: grid;
-  grid-column: col1-favoriteDevice;
-  grid-row: row1-favoriteDevice;
+  grid-area: favorite;
   grid-template-columns: [col1-title] 207px [col2-list] auto [col3-form] 80px;
   grid-gap: 13px;
   margin-bottom: 10px;
@@ -353,18 +369,28 @@
 
 .sectionDevice__boxCardDevice {
   display: grid;
-  grid-column: col1-favoriteDevice;
-  grid-row: row2-boxCardDevice;
+  height: 136px;
+  grid-area: device;
   grid-auto-flow: column;
   grid-gap: 15px;
   justify-content: flex-start;
-  overflow: hidden;
-  min-width: 100vw;
+  overflow-x: scroll;
+  -ms-overflow-style: none;
+  overflow: -moz-hidden-unscrollable;
+  width: 100vw;
+}
+
+.sectionDevice__boxCardDevice::-webkit-scrollbar {
+  width: 0;
 }
 
 .sectionDevice__scrollCard {
   display: grid;
   width: 200px;
+}
+
+.sectionDevice__scrollCard:first-child {
+  margin-left: calc((100vw - 1285px) / 2);
 }
 
 .sectionDevice__imageCard {
