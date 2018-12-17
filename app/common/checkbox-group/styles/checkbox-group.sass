@@ -1,0 +1,76 @@
+@import "../sass/vars.sass";
+
+.checkbox-group
+
+
+    &__input
+        position: absolute
+        z-index: -1
+
+        opacity: 0
+
+        margin: 10px 0 0 7px
+
+    &__wrap
+        display: grid
+        
+        background-color: #F7F7F7
+        border-radius: 20px
+
+        align-content: space-between
+
+    &__item
+        display: grid
+
+        cursor: pointer
+
+        &_fixed-height
+            display: grid
+
+            height: 120px
+
+        &_fixed-height:first-child
+            margin-top: 25px
+
+        &_fixed-height:nth-child(3)::before
+            display: block
+
+            position: absolute
+            margin-top: 1px
+
+            content: ""
+
+            background: #F7F7F7 url("/blocks/heading/images/ M.svg") no-repeat center
+
+            width: 200px
+            height: 35px
+
+            border-top-left-radius: 20px
+            border-top-right-radius: 20px
+
+        &_fixed-height:hover
+            cursor: pointer
+
+    &__inner-box
+        display: grid
+
+        justify-content: flex-start
+
+        letter-spacing: 0
+
+    &__img
+        padding: 14px 0 0 14px
+
+    &__img:last-child
+        display: none
+
+    &__title
+        padding: 0 14px 0 14px
+
+    &__title:last-child
+        padding-bottom: 14px
+
+    &__item input:checked + &__wrap
+        background-color: #FFFFFF
+        box-shadow: 0 2px 6px 0 rgba(197,186,186,0.50)
+        border-radius: 20px

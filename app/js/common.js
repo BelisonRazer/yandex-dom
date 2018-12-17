@@ -1,9 +1,13 @@
 $(function() {
 
-	$(document).ready(function(){
-        $('.header__menu a').each(function () {
-            if (this.href == location.href) $(this).parent().addClass('active');
-        });
-    });
+	// $("#checkbox-id").on("change", function (e) {
+    //     var checkbox = $(this);
+    //     if (checkbox.is(":checked")) {
+    //         // do the confirmation thing here
+            
+    //         e.preventDefault();
+    //         return false;
+    //     }
+    // });
 
 });
