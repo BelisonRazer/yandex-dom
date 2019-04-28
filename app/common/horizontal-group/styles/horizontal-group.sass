@@ -1,0 +1,44 @@
+@import "../sass/vars.sass";
+
+.horizontal-group
+
+
+    &__item
+        width: 200px
+
+    &__item:first-child
+        margin-left: calc((100vw - 1285px) / 2)
+
+    &__item-mobile
+        width: 200px
+        min-width: 200px
+
+    &__item-mobile:first-child
+        margin-left: 20px
+
+    &__item-mobile:not(:last-child)
+        margin-right: 15px
+
+    &__inner-wrap
+        display: grid
+
+        justify-content: flex-start
+        align-content: space-between
+
+    &__content
+        
+
+    &__img
+        padding: 14px 0 0 14px
+
+    &__img:last-child
+        display: none
+
+    &__title
+        padding: 0 14px 0 14px
+
+    &__title:last-child
+        padding-bottom: 14px
+
+    &__modal
+        display: none

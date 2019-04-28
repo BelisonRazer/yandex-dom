@@ -55,10 +55,11 @@
         padding-right: 15px
 
     //Row 2
-    &__boxCardDevice
+    &__horizontal-group
         display: grid
 
         height: 136px
+        width: 100vw
 
         grid-area: device
         grid-auto-flow: column
@@ -69,44 +70,6 @@
         overflow-x: scroll
         -ms-overflow-style: none
         overflow: -moz-hidden-unscrollable
-        
-        width: 100vw
     
-    &__boxCardDevice::-webkit-scrollbar
+    &__horizontal-group::-webkit-scrollbar
         width: 0
-
-    &__scrollCard
-        display: grid
-
-        width: 200px
-
-    &__scrollCard:first-child
-        margin-left: calc((100vw - 1285px) / 2)
-
-    &__imageCard
-        padding: 14px 0 0 14px
-
-    &__titleCard
-        padding: 0 14px 0 14px
-
-    &__titleCard:last-child
-        padding-bottom: 14px
-
-    &__innerCard
-        display: grid
-
-        justify-content: flex-start
-
-        letter-spacing: 0
-
-// @media screen and (max-device-width: 2048px)
-//     .sectionDevice__boxCardDevice
-//         max-width: calc(100vw - 28%)
-
-// @media screen and (max-device-width: 1680px)
-//     .sectionDevice__boxCardDevice
-//         max-width: calc(100vw - 13%)
-
-// @media screen and (device-width: 1366px)
-//     .sectionDevice__boxCardDevice
-//         max-width: 103%

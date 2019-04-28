@@ -1,0 +1,49 @@
+@import "../sass/vars.sass";
+    
+.queue-group
+
+
+
+    &__item
+        display: grid
+
+        align-content: space-between
+
+        height: 120px
+
+    &__item:first-child
+        margin-top: 25px
+
+    &__item:nth-child(3)::before
+        display: block
+
+        position: absolute
+        margin-top: 1px
+
+        content: ""
+
+        background: #F7F7F7 url("/blocks/heading/images/ M.svg") no-repeat center
+
+        width: 200px
+        height: 35px
+
+        border-top-left-radius: 20px
+        border-top-right-radius: 20px
+
+    &__item:hover
+        cursor: pointer
+
+    &__inner-box
+        
+
+    &__img
+        padding: 14px 0 0 14px
+
+    &__img:last-child
+        display: none
+
+    &__title
+        padding: 0 14px 0 14px
+
+    &__title:last-child
+        padding-bottom: 14px

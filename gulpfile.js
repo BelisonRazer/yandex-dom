@@ -20,9 +20,9 @@ var gulp          = require('gulp'),
 
 gulp.task('styles', function() {
 	return gulp.src('app/'+syntax+'/**/*.'+syntax+'')
-	.pipe(sass({ outputStyle: 'expanded' }).on("error", notify.onError()))
+	.pipe(sass({ outputStyle: 'compact' }).on("error", notify.onError()))
 	//.pipe(rename({ suffix: '.min', prefix : '' }))
-	//.pipe(autoprefixer(['last 15 versions']))
+	.pipe(autoprefixer(['last 15 versions']))
 	//.pipe(cleancss( {level: { 1: { specialComments: 0 } } })) // Opt., comment out when debugging
 	.pipe(gulp.dest('app/public'));
 	//.pipe(browserSync.stream())
@@ -80,6 +80,14 @@ gulp.task('images4', function () {
 		.pipe(gulp.dest('app/public/common/card'));
 });
 
+gulp.task('images5', function () {
+	return gulp.src(['app/common/modal/**/*.*', '!app/common/**/**/styles/*'], {since: gulp.lastRun("images")})
+		// .pipe(ignore.exclude('./styles/**/*'))
+		.pipe(newer('app/public'))
+		.pipe(debug({title: 'modal'}))
+		.pipe(gulp.dest('app/public/common/modal'));
+});
+
 gulp.task('img', function () {
 	return gulp.src('app/img/**/*.*', {since: gulp.lastRun("img")})
 		.pipe(newer('app/public'))
@@ -116,7 +124,7 @@ gulp.task('js', function() {
 // });
 
 gulp.task('build', gulp.series('clean', gulp.parallel('styles', 'assets'), 
-'fonts', 'js', 'images4', 'images3', 'images2', 'images', 'img'));
+'fonts', 'js', 'images5', 'images4', 'images3', 'images2', 'images', 'img'));
 
 //-------------- watch, sync --------------
 
@@ -130,6 +138,7 @@ gulp.task('watch', function () {
 	gulp.watch('app/**/images/**/*.*', gulp.series('images'));
 	gulp.watch('app/**/**/images/**/*.*', gulp.series('images'));
 	gulp.watch('app/**/**/**/images/**/*.*', gulp.series('images'));
+	gulp.watch('app/js/*.js', gulp.series('js'));
 });
 
 gulp.task('serve', function () {

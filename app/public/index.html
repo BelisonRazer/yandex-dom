@@ -1,29 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
+
 <head>
 	<meta charset="utf-8">
 	<title>Yandex Dom</title>
 	<meta name="description" content="Smart house management, Author: Chertkov S. V.">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	
-	<!-- Template Basic Images Start -->
+
 	<meta property="og:image" content="path/to/image.jpg">
 	<link rel="icon" href="img/favicon/favicon.ico">
 	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png">
-	<!-- Template Basic Images End -->
-	
-	<!-- Custom Browsers Color Start -->
+
 	<meta name="theme-color" content="#43CCCB">
-	<!-- Custom Browsers Color End -->
-	
-	<link rel="stylesheet" href="main.css">
+
+	<!-- <link rel="stylesheet" href="../public/main.css"> -->
+	<link rel="stylesheet" href="./main.css">
 </head>
+
 <body>
 	<header class="header">
 		<div class="header__navigation">
 			<div class="header__menu">
-				<img class="header__item1" src="/blocks/header/images/Яндекс Дом.svg" alt="Яндекс Дом">
+				<img class="header__item1" src="./blocks/header/images/Яндекс Дом.svg" alt="Яндекс Дом">
+				<!-- <input type="checkbox" id="nav-toggle" hidden> -->
+				<!-- <button class="open-nav-btn" id="open-btn"></button> -->
+				<nav class="nav" id="nav">
+					<!-- <label for="nav-toggle" class="nav-toggle" onclick></label> -->
+					<button class="close-nav-btn" id="close-btn"></button>
+					<h2 class="logo">
+						<a href="//yandex.ru/">Меню</a>
+					</h2>
+					<ul>
+						<li><a class="active" href="#1">Сводка</a>
+						<li><a href="#2">Устройства</a>
+						<li><a href="#3">Сценарии</a>
+					</ul>
+				</nav>
 				<a class="header__item2 active" href="http://localhost:3000/">Сводка</a>
 				<a class="header__item3" href="#">Устройства</a>
 				<a class="header__item4" href="#">Сценарии</a>
@@ -35,7 +48,7 @@
 		<div class="heading__left-box">
 			<h2 class="heading__title heading__title_main title">Главное</h2>
 			<div class="heading__content-left">
-				<img class="heading__image" src="/blocks/heading/images/bg@2x.png" alt="#">
+				<img class="heading__image" src="./blocks/heading/images/bg@2x.png" alt="#">
 				<div class="heading__inner-content-left">
 					<h1 class="heading__title heading__title_inner title title_inner">Привет, Сергей!</h1>
 					<p class="heading__text text">Двери и окна закрыты, сигнализация включена.</p>
@@ -44,89 +57,206 @@
 						<p class="heading__weather-street heading__weather-street_img text text_opacity">За окном</p>
 					</div>
 				</div>
-				<div class="heading__scroll-boxes">
-					<div class="heading__scroll-boxes-hidden-scroll-bar">
-						<div class="heading__checkbox-group-scroll checkbox-group">
-							<label class="checkbox-group__item_fixed-height card">
-								<input name="checkbox-button" value="philips-cooler" type="checkbox" class="checkbox-group__input" id="checkbox-id">
-								<div class="checkbox-group__inner-box">
-									<img src="/common/card/images/icon_temperature@1x.png" alt="#" class="checkbox-group__img">
-									<img src="/common/card/images/icon_temperature_2@1x.png" alt="#" class="checkbox-group__img">
+
+
+
+
+				<div class="heading__horizontal-group_mobile horizontal-group">
+					<label class="horizontal-group__item-mobile card">
+						<div class="horizontal-group__inner-wrap">
+							<div class="horizontal-group__content">
+								<img src="./common/card/images/icon_temperature@1x.png" alt="#"
+									class="horizontal-group__img">
+								<img src="./common/card/images/icon_temperature_2@1x.png" alt="#"
+									class="horizontal-group__img">
+							</div>
+							<div class="horizontal-group__content">
+								<p class="horizontal-group__title [ title title_card ]">Philips cooler</p>
+								<p class="horizontal-group__title [ text text_cardTime ]">Начнёт охлаждать в 16:30</p>
+							</div>
+						</div>
+					</label>
+					<label class="horizontal-group__item-mobile card">
+						<div class="horizontal-group__inner-wrap">
+							<div class="horizontal-group__content">
+								<img src="./common/card/images/icon_sun@1x.png" alt="#" class="horizontal-group__img">
+								<img src="./common/card/images/icon_sun_2@1x.png" alt="#" class="horizontal-group__img">
+							</div>
+							<div class="horizontal-group__content">
+								<p class="horizontal-group__title [ title title_card ]">D-Link Omna 180 Cam</p>
+								<p class="horizontal-group__title [ text text_cardTime ]">Включится в 17:00</p>
+							</div>
+						</div>
+					</label>
+					<label class="horizontal-group__item-mobile card">
+						<div class="horizontal-group__inner-wrap">
+							<div class="horizontal-group__content">
+								<img src="./common/card/images/icon_temperature@1x.png" alt="#"
+									class="horizontal-group__img">
+								<img src="./common/card/images/icon_temperature_2@1x.png" alt="#"
+									class="horizontal-group__img">
+							</div>
+							<div class="horizontal-group__content">
+								<p class="horizontal-group__title [ title title_card ]">Elgato Eve Degree Connected</p>
+								<p class="horizontal-group__title [ text text_cardTime ]">Включится в 17:30</p>
+							</div>
+						</div>
+					</label>
+					<label class="horizontal-group__item-mobile card">
+						<div class="horizontal-group__inner-wrap">
+							<div class="horizontal-group__content">
+								<img src="./common/card/images/icon_sun@1x.png" alt="#" class="horizontal-group__img">
+								<img src="./common/card/images/icon_sun_2@1x.png" alt="#" class="horizontal-group__img">
+							</div>
+							<div class="horizontal-group__content">
+								<p class="horizontal-group__title [ title title_card ]">LIFX Mini Day & Dusk A60 E27</p>
+								<p class="horizontal-group__title [ text text_cardTime ]">Включится в 18:00</p>
+							</div>
+						</div>
+					</label>
+					<label class="horizontal-group__item-mobile card">
+						<div class="horizontal-group__inner-wrap">
+							<div class="horizontal-group__content">
+								<img src="./common/card/images/icon_sun@1x.png" alt="#" class="horizontal-group__img">
+								<img src="./common/card/images/icon_sun_2@1x.png" alt="#" class="horizontal-group__img">
+							</div>
+							<div class="horizontal-group__content">
+								<p class="horizontal-group__title [ title title_card ]">Xiaomi Yeelight LED Smart Bulb
+								</p>
+								<p class="horizontal-group__title [ text text_cardTime ]">Включится в 18:30</p>
+							</div>
+						</div>
+					</label>
+					<label class="horizontal-group__item-mobile card">
+						<div class="horizontal-group__inner-wrap">
+							<div class="horizontal-group__content">
+								<img src="./common/card/images/icon_sun@1x.png" alt="#" class="horizontal-group__img">
+								<img src="./common/card/images/icon_sun_2@1x.png" alt="#" class="horizontal-group__img">
+							</div>
+							<div class="horizontal-group__content">
+								<p class="horizontal-group__title [ title title_card ]">Xiaomi Yeelight LED Smart Bulb
+								</p>
+								<p class="horizontal-group__title [ text text_cardTime ]">Включится в 18:30</p>
+							</div>
+						</div>
+					</label>
+					<label class="horizontal-group__item-mobile card">
+						<div class="horizontal-group__inner-wrap">
+							<div class="horizontal-group__content">
+								<img src="./common/card/images/icon_sun@1x.png" alt="#" class="horizontal-group__img">
+								<img src="./common/card/images/icon_sun_2@1x.png" alt="#" class="horizontal-group__img">
+							</div>
+							<div class="horizontal-group__content">
+								<p class="horizontal-group__title [ title title_card ]">Xiaomi Yeelight LED Smart Bulb
+								</p>
+								<p class="horizontal-group__title [ text text_cardTime ]">Включится в 18:30</p>
+							</div>
+						</div>
+					</label>
+					<label class="horizontal-group__item-mobile card">
+						<div class="horizontal-group__inner-wrap">
+							<div class="horizontal-group__content">
+								<img src="./common/card/images/icon_sun@1x.png" alt="#" class="horizontal-group__img">
+								<img src="./common/card/images/icon_sun_2@1x.png" alt="#" class="horizontal-group__img">
+							</div>
+							<div class="horizontal-group__content">
+								<p class="horizontal-group__title [ title title_card ]">Xiaomi Yeelight LED Smart Bulb
+								</p>
+								<p class="horizontal-group__title [ text text_cardTime ]">Включится в 18:30</p>
+							</div>
+						</div>
+					</label>
+				</div>
+
+
+
+
+				<div class="heading__vertical-queue-box">
+					<div class="heading__hide-scroll-bar">
+						<div class="heading__queue-group queue-group">
+							<div class="queue-group__item card">
+								<div class="queue-group__inner-box">
+									<img src="./common/card/images/icon_temperature@1x.png" alt="#"
+										class="queue-group__img">
+									<img src="./common/card/images/icon_temperature_2@1x.png" alt="#"
+										class="queue-group__img">
 								</div>
-								<div class="checkbox-group__inner-box">
-									<p class="checkbox-group__title title title_card">Philips cooler</p>
-									<p class="checkbox-group__title text text_cardTime">Начнёт охлаждать в 16:30</p>
-								</div>						
+								<div class="queue-group__inner-box">
+									<p class="queue-group__title title title_card">Philips cooler</p>
+									<p class="queue-group__title text text_cardTime">Начнёт охлаждать в 16:30</p>
+								</div>
+							</div>
+							<label class="queue-group__item card">
+								<div class="queue-group__inner-box">
+									<img src="./common/card/images/icon_sun@1x.png" alt="#" class="queue-group__img">
+									<img src="./common/card/images/icon_sun_2@1x.png" alt="#" class="queue-group__img">
+								</div>
+								<div class="queue-group__inner-box">
+									<p class="queue-group__title title title_card">D-Link Omna 180 Cam</p>
+									<p class="queue-group__title text text_cardTime">Включится в 17:00</p>
+								</div>
 							</label>
-							<label class="checkbox-group__item_fixed-height card">
-								<div class="checkbox-group__inner-box">
-									<img src="/common/card/images/icon_sun@1x.png" alt="#" class="checkbox-group__img">
-									<img src="/common/card/images/icon_sun_2@1x.png" alt="#" class="checkbox-group__img">
+							<label class="queue-group__item card">
+								<div class="queue-group__inner-box">
+									<img src="./common/card/images/icon_temperature@1x.png" alt="#"
+										class="queue-group__img">
+									<img src="./common/card/images/icon_temperature_2@1x.png" alt="#"
+										class="queue-group__img">
 								</div>
-								<div class="checkbox-group__inner-box">
-									<p class="checkbox-group__title title title_card">Xiaomi Yeelight LED Smart Bulb</p>
-									<p class="checkbox-group__title text text_cardTime">Включино</p>
-								</div>					
-							</label>
-							<label class="checkbox-group__item_fixed-height card">
-								<div class="checkbox-group__inner-box">
-									<img src="/common/card/images/icon_temperature@1x.png" alt="#" class="checkbox-group__img">
-									<img src="/common/card/images/icon_temperature_2@1x.png" alt="#" class="checkbox-group__img">
-								</div>
-								<div class="checkbox-group__inner-box">
-									<p class="checkbox-group__title title title_card">Elgato Eve Degree Connected</p>
-									<p class="checkbox-group__title text text_cardTime">Выключено до 18:00</p>
+								<div class="queue-group__inner-box">
+									<p class="queue-group__title title title_card">Elgato Eve Degree Connected</p>
+									<p class="queue-group__title text text_cardTime">Включится в 17:30</p>
 								</div>
 							</label>
-							<label class="checkbox-group__item_fixed-height card">
-								<div class="checkbox-group__inner-box">
-									<img src="/common/card/images/icon_sun@1x.png" alt="#" class="checkbox-group__img">
-									<img src="/common/card/images/icon_sun_2@1x.png" alt="#" class="checkbox-group__img">
+							<label class="queue-group__item card">
+								<div class="queue-group__inner-box">
+									<img src="./common/card/images/icon_sun@1x.png" alt="#" class="queue-group__img">
+									<img src="./common/card/images/icon_sun_2@1x.png" alt="#" class="queue-group__img">
 								</div>
-								<div class="checkbox-group__inner-box">
-									<p class="checkbox-group__title title title_card">Xiaomi Yeelight LED Smart Bulb</p>
-									<p class="checkbox-group__title text text_cardTime">Включится в 17:00</p>
-								</div>					
+								<div class="queue-group__inner-box">
+									<p class="queue-group__title title title_card">LIFX Mini Day & Dusk A60 E27</p>
+									<p class="queue-group__title text text_cardTime">Включится в 18:00</p>
+								</div>
 							</label>
-							<label class="checkbox-group__item_fixed-height card">
-								<div class="checkbox-group__inner-box">
-									<img src="/common/card/images/icon_sun@1x.png" alt="#" class="checkbox-group__img">
-									<img src="/common/card/images/icon_sun_2@1x.png" alt="#" class="checkbox-group__img">
+							<label class="queue-group__item card">
+								<div class="queue-group__inner-box">
+									<img src="./common/card/images/icon_sun@1x.png" alt="#" class="queue-group__img">
+									<img src="./common/card/images/icon_sun_2@1x.png" alt="#" class="queue-group__img">
 								</div>
-								<div class="checkbox-group__inner-box">
-									<p class="checkbox-group__title title title_card">Xiaomi Yeelight LED Smart Bulb</p>
-									<p class="checkbox-group__title text text_cardTime">Включится в 17:00</p>
-								</div>					
+								<div class="queue-group__inner-box">
+									<p class="queue-group__title title title_card">Xiaomi Yeelight LED Smart Bulb</p>
+									<p class="queue-group__title text text_cardTime">Включится в 18:30</p>
+								</div>
 							</label>
-							<label class="checkbox-group__item_fixed-height card">
-								<div class="checkbox-group__inner-box">
-									<img src="/common/card/images/icon_sun@1x.png" alt="#" class="checkbox-group__img">
-									<img src="/common/card/images/icon_sun_2@1x.png" alt="#" class="checkbox-group__img">
+							<label class="queue-group__item card">
+								<div class="queue-group__inner-box">
+									<img src="./common/card/images/icon_sun@1x.png" alt="#" class="queue-group__img">
+									<img src="./common/card/images/icon_sun_2@1x.png" alt="#" class="queue-group__img">
 								</div>
-								<div class="checkbox-group__inner-box">
-									<p class="checkbox-group__title title title_card">Xiaomi Yeelight LED Smart Bulb</p>
-									<p class="checkbox-group__title text text_cardTime">Включится в 17:00</p>
-								</div>					
+								<div class="queue-group__inner-box">
+									<p class="queue-group__title title title_card">Xiaomi Yeelight LED Smart Bulb</p>
+									<p class="queue-group__title text text_cardTime">Включится в 18:30</p>
+								</div>
 							</label>
-							<label class="checkbox-group__item_fixed-height card">
-								<div class="checkbox-group__inner-box">
-									<img src="/common/card/images/icon_sun@1x.png" alt="#" class="checkbox-group__img">
-									<img src="/common/card/images/icon_sun_2@1x.png" alt="#" class="checkbox-group__img">
+							<label class="queue-group__item card">
+								<div class="queue-group__inner-box">
+									<img src="./common/card/images/icon_sun@1x.png" alt="#" class="queue-group__img">
+									<img src="./common/card/images/icon_sun_2@1x.png" alt="#" class="queue-group__img">
 								</div>
-								<div class="checkbox-group__inner-box">
-									<p class="checkbox-group__title title title_card">Xiaomi Yeelight LED Smart Bulb</p>
-									<p class="checkbox-group__title text text_cardTime">Включится в 17:00</p>
-								</div>					
+								<div class="queue-group__inner-box">
+									<p class="queue-group__title title title_card">Xiaomi Yeelight LED Smart Bulb</p>
+									<p class="queue-group__title text text_cardTime">Включится в 18:30</p>
+								</div>
 							</label>
-							<label class="checkbox-group__item_fixed-height card">
-								<div class="checkbox-group__inner-box">
-									<img src="/common/card/images/icon_sun@1x.png" alt="#" class="checkbox-group__img">
-									<img src="/common/card/images/icon_sun_2@1x.png" alt="#" class="checkbox-group__img">
+							<label class="queue-group__item card">
+								<div class="queue-group__inner-box">
+									<img src="./common/card/images/icon_sun@1x.png" alt="#" class="queue-group__img">
+									<img src="./common/card/images/icon_sun_2@1x.png" alt="#" class="queue-group__img">
 								</div>
-								<div class="checkbox-group__inner-box">
-									<p class="checkbox-group__title title title_card">Xiaomi Yeelight LED Smart Bulb</p>
-									<p class="checkbox-group__title text text_cardTime">Включится в 17:00</p>
-								</div>					
+								<div class="queue-group__inner-box">
+									<p class="queue-group__title title title_card">Xiaomi Yeelight LED Smart Bulb</p>
+									<p class="queue-group__title text text_cardTime">Включится в 18:30</p>
+								</div>
 							</label>
 						</div>
 					</div>
@@ -137,21 +267,24 @@
 			<h2 class="heading__title-right title">Избранные сценарии</h2>
 			<div class="heading__form-box">
 				<form class="heading__form" action="">
-					<a href="#"><img src="/blocks/heading/images/arrow-left.svg" alt="left"></a>
-					<a href="#"><img class="heading__image-arrow-right" src="/blocks/heading/images/arrow-left.svg" alt="left"></a>
+					<a href="#"><img src="./blocks/heading/images/arrow-left.svg" alt="left"></a>
+					<a href="#"><img class="heading__image-arrow-right" src="./blocks/heading/images/arrow-left.svg"
+							alt="left"></a>
 				</form>
 			</div>
 			<div class="heading__content-right">
 				<div class="heading__checkbox-group checkbox-group">
 					<label class="checkbox-group__item">
-						<input name="checkbox-button" value="вкл-свет-дом-двор" type="checkbox" class="checkbox-group__input">
+						<input name="checkbox-button" value="вкл-свет-дом-двор" type="checkbox"
+							class="checkbox-group__input">
 						<div class="checkbox-group__wrap">
 							<div class="checkbox-group__inner-box">
-								<img src="/common/card/images/icon_sun_2@1x.png" alt="#" class="checkbox-group__img">
-								<img src="/common/card/images/icon_sun@1x.png" alt="#" class="checkbox-group__img">
+								<img src="./common/card/images/icon_sun_2@1x.png" alt="#" class="checkbox-group__img">
+								<img src="./common/card/images/icon_sun@1x.png" alt="#" class="checkbox-group__img">
 							</div>
 							<div class="checkbox-group__inner-box">
-								<p class="checkbox-group__title title title_card">Выключить весь свет в доме и во дворе</p>
+								<p class="checkbox-group__title title title_card">Выключить весь свет в доме и во дворе
+								</p>
 							</div>
 						</div>
 					</label>
@@ -159,8 +292,10 @@
 						<input name="checkbox-button" value="выкл-всё" type="checkbox" class="checkbox-group__input">
 						<div class="checkbox-group__wrap">
 							<div class="checkbox-group__inner-box">
-								<img src="/common/card/images/icon_scheduled@1x.png" alt="#" class="checkbox-group__img">
-								<img src="/common/card/images/icon_scheduled@1x.png" alt="#" class="checkbox-group__img">
+								<img src="./common/card/images/icon_scheduled@1x.png" alt="#"
+									class="checkbox-group__img">
+								<img src="./common/card/images/icon_scheduled@1x.png" alt="#"
+									class="checkbox-group__img">
 							</div>
 							<div class="checkbox-group__inner-box">
 								<p class="checkbox-group__title title title_card">Я ухожу</p>
@@ -168,11 +303,12 @@
 						</div>
 					</label>
 					<label class="checkbox-group__item">
-						<input name="checkbox-button" value="вкл-свет-коридор" type="checkbox" class="checkbox-group__input">
+						<input name="checkbox-button" value="вкл-свет-коридор" type="checkbox"
+							class="checkbox-group__input">
 						<div class="checkbox-group__wrap">
 							<div class="checkbox-group__inner-box">
-								<img src="/common/card/images/icon_sun_2@1x.png" alt="#" class="checkbox-group__img">
-								<img src="/common/card/images/icon_sun@1x.png" alt="#" class="checkbox-group__img">
+								<img src="./common/card/images/icon_sun_2@1x.png" alt="#" class="checkbox-group__img">
+								<img src="./common/card/images/icon_sun@1x.png" alt="#" class="checkbox-group__img">
 							</div>
 							<div class="checkbox-group__inner-box">
 								<p class="checkbox-group__title title title_card">Включить свет в коридоре</p>
@@ -180,11 +316,14 @@
 						</div>
 					</label>
 					<label class="checkbox-group__item">
-						<input name="checkbox-button" value="набрать-ванну" type="checkbox" class="checkbox-group__input">
+						<input name="checkbox-button" value="набрать-ванну" type="checkbox"
+							class="checkbox-group__input">
 						<div class="checkbox-group__wrap">
 							<div class="checkbox-group__inner-box">
-								<img src="/common/card/images/icon_temperature_2@1x.png" alt="#" class="checkbox-group__img">
-								<img src="/common/card/images/icon_temperature@1x.png" alt="#" class="checkbox-group__img">
+								<img src="./common/card/images/icon_temperature_2@1x.png" alt="#"
+									class="checkbox-group__img">
+								<img src="./common/card/images/icon_temperature@1x.png" alt="#"
+									class="checkbox-group__img">
 							</div>
 							<div class="checkbox-group__inner-box">
 								<p class="checkbox-group__title title title_card">Набрать горячую ванну</p>
@@ -193,14 +332,18 @@
 						</div>
 					</label>
 					<label class="checkbox-group__item">
-						<input name="checkbox-button" value="вкл-теплый-пол-везде" type="checkbox" class="checkbox-group__input">
+						<input name="checkbox-button" value="вкл-теплый-пол-везде" type="checkbox"
+							class="checkbox-group__input">
 						<div class="checkbox-group__wrap">
 							<div class="checkbox-group__inner-box">
-								<img src="/common/card/images/icon_temperature_2@1x.png" alt="#" class="checkbox-group__img">
-								<img src="/common/card/images/icon_temperature@1x.png" alt="#" class="checkbox-group__img">
+								<img src="./common/card/images/icon_temperature_2@1x.png" alt="#"
+									class="checkbox-group__img">
+								<img src="./common/card/images/icon_temperature@1x.png" alt="#"
+									class="checkbox-group__img">
 							</div>
 							<div class="checkbox-group__inner-box">
-								<p class="checkbox-group__title title title_card">Сделать пол тёплым во всей квартире</p>
+								<p class="checkbox-group__title title title_card">Сделать пол тёплым во всей квартире
+								</p>
 							</div>
 						</div>
 					</label>
@@ -237,110 +380,571 @@
 			</div>
 			<div class="sectionDevice__boxForm">
 				<form action="" class="sectionDevice__form">
-					<a href="#"><img src="/blocks/heading/images/arrow-left.svg" alt="left"></a>
-					<a href="#"><img class="sectionDevice__image-arrow-right" src="/blocks/heading/images/arrow-left.svg" alt="left"></a>
+					<a href="#"><img src="./blocks/heading/images/arrow-left.svg" alt="left"></a>
+					<a href="#"><img class="sectionDevice__image-arrow-right"
+							src="./blocks/heading/images/arrow-left.svg" alt="left"></a>
 				</form>
 			</div>
 		</div>
-		<div class="sectionDevice__boxCardDevice">
-			<div class="sectionDevice__scrollCard card">
-				<div class="sectionDevice__innerCard">
-					<img src="/common/card/images/icon_temperature@1x.png" alt="#" class="sectionDevice__imageCard">
+		<div class="sectionDevice__horizontal-group horizontal-group">
+			<div class="horizontal-group__item card">
+				<div class="horizontal-group__inner-wrap [ modal modal_open ]" data-modal="simple-modal-1">
+					<div class="horizontal-group__content">
+						<img src="./common/card/images/icon_sun_2@1x.png" alt="#" class="horizontal-group__img">
+						<img src="./common/card/images/icon_sun@1x.png" alt="#" class="horizontal-group__img">
+					</div>
+					<div class="horizontal-group__content">
+						<p class="horizontal-group__title [ title title_card ]">Xiaomi Yeelight LED Smart Bulb</p>
+						<p class="horizontal-group__title [ text text_cardTime ]">Включено</p>
+					</div>
 				</div>
-				<div class="sectionDevice__innerCard">
-					<p class="sectionDevice__titleCard [ title title_card ]">Philips cooler</p>
-					<p class="sectionDevice__titleCard [ text text_cardTime ]">Начнёт охлаждать в 16:30</p>
-				</div>						
+				<div class="horizontal-group__modal modal" id="simple-modal-1" name="close-modal-1">
+					<div class="modal__content-box">
+						<div class="modal__content">
+							<div class="modal__content-wrap">
+								<div class="modal__content-inner-wrap">
+									<h1 class="modal__title [ title title_inner ]">Xiaomi Yeelight LED Smart Bulb</h1>
+									<p class="text text_modal">Включено</p>
+								</div>
+								<div class="modal__img-box">
+									<img src="./common/card/images/icon_sun_2@2x.png" alt="#" class="modal__img">
+								</div>
+							</div>
+							<div class="modal__content-tool">
+								<div class="modal__radio-group radioGroup">
+									<label class="radioGroup__item">
+										<input name="modalButton" value="Вручную" type="radio" class="radioGroup__input"
+											checked>
+										<div class="radioGroup__text text [ text text_smallSize ]">Вручную</div>
+									</label>
+									<label class="radioGroup__item">
+										<input name="modalButton" value="Дневной свет" type="radio"
+											class="radioGroup__input">
+										<div class="radioGroup__text text [ text text_smallSize ]">Дневной свет</div>
+									</label>
+									<label class="radioGroup__item">
+										<input name="modalButton" value="Вечерний свет" type="radio"
+											class="radioGroup__input">
+										<div class="radioGroup__text text [ text text_smallSize ]">Вечерний свет</div>
+									</label>
+									<label class="radioGroup__item">
+										<input name="modalButton" value="Рассвет" type="radio"
+											class="radioGroup__input">
+										<div class="radioGroup__text text [ text text_smallSize ]">Рассвет</div>
+									</label>
+								</div>
+								<div class="modal__swipe-tool">
+									<div class="modal__drag-button"></div>
+									<img src="./common/modal/images/icon_sun_max.png" alt="#" class="modal__img-sun-min">
+									<img src="./common/modal/images/icon_sun_min.png" alt="#" class="modal__img-sun-max">
+								</div>
+							</div>
+						</div>
+						<div class="modal__btn-box">
+							<button class="modal-btn modal-btn_ok [ text text_btn ]"
+								data-modal="close-modal-1">Применить</button>
+							<button class="modal-btn modal-btn_cancel [ text text_btn ]"
+								data-modal="close-modal-1">Закрыть</button>
+						</div>
+					</div>
+				</div>
 			</div>
-			<div class="sectionDevice__scrollCard card">
-				<div class="sectionDevice__innerCard">
-					<img src="/common/card/images/icon_sun@1x.png" alt="#" class="sectionDevice__imageCard">
+			<div class="horizontal-group__item card">
+				<div class="horizontal-group__inner-wrap [ modal modal_open ]" data-modal="simple-modal-2">
+					<div class="horizontal-group__content">
+						<img src="./common/card/images/icon_temperature_2@1x.png" alt="#" class="horizontal-group__img">
+						<img src="./common/card/images/icon_temperature@1x.png" alt="#" class="horizontal-group__img">
+					</div>
+					<div class="horizontal-group__content">
+						<p class="horizontal-group__title [ title title_card ]">Xiaomi Warm Floor</p>
+						<p class="horizontal-group__title [ text text_cardTime ]">Включено</p>
+					</div>
 				</div>
-				<div class="sectionDevice__innerCard">
-					<p class="sectionDevice__titleCard [ title title_card ]">Xiaomi Yeelight LED Smart Bulb</p>
-					<p class="sectionDevice__titleCard [ text text_cardTime ]">Включино</p>
-				</div>					
+				<div class="horizontal-group__modal modal" id="simple-modal-2" name="close-modal-2">
+					<div class="modal__content-box">
+						<div class="modal__content">
+							<div class="modal__content-wrap">
+								<div class="modal__content-inner-wrap">
+									<h1 class="modal__title [ title title_inner ]">Xiaomi Warm Floor</h1>
+									<p class="text text_modal">Включено</p>
+								</div>
+								<div class="modal__img-box">
+									<p class="text text_img-value">+23</p>
+									<img src="./common/card/images/icon_temperature_2@2x.png" alt="#" class="modal__img">
+								</div>
+							</div>
+							<div class="modal__content-tool">
+								<img src="./common/modal/images/Oval@1x.png" alt="#" class="modal__img-oval">
+								<img src="./common/modal/images/Oval Copy.png" alt="#" class="modal__img-oval-part">
+								<div class="modal__circle-inner-oval">
+									<h1 class="modal__temperature [ text text_oval-temperature-value ]">+23</h1>
+									<img src="./common/modal/images/icon_arrow.svg" alt="#"
+										class="modal__img-oval-arrow">
+								</div>
+								<div class="modal__hidden-part-oval"></div>
+							</div>
+						</div>
+						<div class="modal__btn-box">
+							<button class="modal-btn modal-btn_ok [ text text_btn ]"
+								data-modal="close-modal-2">Применить</button>
+							<button class="modal-btn modal-btn_cancel [ text text_btn ]"
+								data-modal="close-modal-2">Закрыть</button>
+						</div>
+					</div>
+				</div>
 			</div>
-			<div class="sectionDevice__scrollCard card">
-				<div class="sectionDevice__innerCard">
-					<img src="/common/card/images/icon_sun@1x.png" alt="#" class="sectionDevice__imageCard">
+			<div class="horizontal-group__item card">
+				<div class="horizontal-group__inner-wrap [ modal modal_open ]" data-modal="simple-modal-3">
+					<div class="horizontal-group__content">
+						<img src="./common/card/images/icon_temperature@1x.png" alt="#" class="horizontal-group__img">
+						<img src="./common/card/images/icon_temperature_2@1x.png" alt="#" class="horizontal-group__img">
+					</div>
+					<div class="horizontal-group__content">
+						<p class="horizontal-group__title [ title title_card ]">Elgato Eve Degree Connected</p>
+						<p class="horizontal-group__title [ text text_cardTime ]">Выключено до 17:30</p>
+					</div>
 				</div>
-				<div class="sectionDevice__innerCard">
-					<p class="sectionDevice__titleCard [ title title_card ]">Elgato Eve Degree Connected</p>
-					<p class="sectionDevice__titleCard [ text text_cardTime ]">Выключено до 18:00</p>
+				<div class="horizontal-group__modal modal" id="simple-modal-3" name="close-modal-3">
+					<div class="modal__content-box">
+						<div class="modal__content">
+							<div class="modal__content-wrap">
+								<div class="modal__content-inner-wrap">
+									<h1 class="modal__title [ title title_inner ]">Elgato Eve Degree Connected</h1>
+									<p class="text text_modal">Выключено до 17:30</p>
+								</div>
+								<div class="modal__img-box">
+									<p class="text text_img-value">+23</p>
+									<img src="./common/card/images/icon_temperature@2x.png" alt="#" class="modal__img">
+								</div>
+							</div>
+							<div class="modal__content-tool">
+								<div class="modal__radio-group radioGroup">
+									<label class="radioGroup__item">
+										<input name="modal2Button" value="Вручную" type="radio"
+											class="radioGroup__input" checked>
+										<div class="radioGroup__text text [ text text_smallSize ]">Вручную</div>
+									</label>
+									<label class="radioGroup__item">
+										<input name="modal2Button" value="Холодно" type="radio"
+											class="radioGroup__input">
+										<div class="radioGroup__text text [ text text_smallSize ]">Холодно</div>
+									</label>
+									<label class="radioGroup__item">
+										<input name="modal2Button" value="Тепло" type="radio" class="radioGroup__input">
+										<div class="radioGroup__text text [ text text_smallSize ]">Тепло</div>
+									</label>
+									<label class="radioGroup__item">
+										<input name="modal2Button" value="Жарко" type="radio" class="radioGroup__input">
+										<div class="radioGroup__text text [ text text_smallSize ]">Жарко</div>
+									</label>
+								</div>
+								<div class="modal__swipe-tool modal__swipe-tool_temperature-color">
+									<div class="modal__drag-button"></div>
+									<p class="modal__text-sun-min [ text text_modal-temp-drag-line ]">-10</p>
+									<p class="modal__text-sun-max [ text text_modal-temp-drag-line ]">+30</p>
+								</div>
+							</div>
+						</div>
+						<div class="modal__btn-box">
+							<button class="modal-btn modal-btn_ok [ text text_btn ]"
+								data-modal="close-modal-3">Применить</button>
+							<button class="modal-btn modal-btn_cancel [ text text_btn ]"
+								data-modal="close-modal-3">Закрыть</button>
+						</div>
+					</div>
 				</div>
 			</div>
-			<div class="sectionDevice__scrollCard card">
-				<div class="sectionDevice__innerCard">
-					<img src="/common/card/images/icon_sun@1x.png" alt="#" class="sectionDevice__imageCard">
+			<div class="horizontal-group__item card">
+				<div class="horizontal-group__inner-wrap [ modal modal_open ]" data-modal="simple-modal-4">
+					<div class="horizontal-group__content">
+						<img src="./common/card/images/icon_sun@1x.png" alt="#" class="horizontal-group__img">
+						<img src="./common/card/images/icon_sun_2@1x.png" alt="#" class="horizontal-group__img">
+					</div>
+					<div class="horizontal-group__content">
+						<p class="horizontal-group__title [ title title_card ]">D-Link Omna 180 Cam</p>
+						<p class="horizontal-group__title [ text text_cardTime ]">Включится в 17:00</p>
+					</div>
 				</div>
-				<div class="sectionDevice__innerCard">
-					<p class="sectionDevice__titleCard [ title title_card ]">Xiaomi Yeelight LED Smart Bulb</p>
-					<p class="sectionDevice__titleCard [ text text_cardTime ]">Включится в 17:00</p>
-				</div>					
+				<div class="horizontal-group__modal modal" id="simple-modal-4" name="close-modal-4">
+					<div class="modal__content-box">
+						<div class="modal__content">
+							<div class="modal__content-wrap">
+								<div class="modal__content-inner-wrap">
+									<h1 class="modal__title [ title title_inner ]">D-Link Omna 180 Cam</h1>
+									<p class="text text_modal">Включится в 17:00</p>
+								</div>
+								<div class="modal__img-box">
+									<img src="./common/card/images/icon_sun@2x.png" alt="#" class="modal__img">
+								</div>
+							</div>
+							<div class="modal__content-tool">
+
+							</div>
+						</div>
+						<div class="modal__btn-box">
+							<button class="modal-btn modal-btn_ok [ text text_btn ]"
+								data-modal="close-modal-4">Применить</button>
+							<button class="modal-btn modal-btn_cancel [ text text_btn ]"
+								data-modal="close-modal-4">Закрыть</button>
+						</div>
+					</div>
+				</div>
 			</div>
-			<div class="sectionDevice__scrollCard card">
-				<div class="sectionDevice__innerCard">
-					<img src="/common/card/images/icon_sun@1x.png" alt="#" class="sectionDevice__imageCard">
+			<div class="horizontal-group__item card">
+				<div class="horizontal-group__inner-wrap [ modal modal_open ]" data-modal="simple-modal-5">
+					<div class="horizontal-group__content">
+						<img src="./common/card/images/icon_sun@1x.png" alt="#" class="horizontal-group__img">
+						<img src="./common/card/images/icon_sun_2@1x.png" alt="#" class="horizontal-group__img">
+					</div>
+					<div class="horizontal-group__content">
+						<p class="horizontal-group__title [ title title_card ]">LIFX Mini Day & Dusk A60 E27</p>
+						<p class="horizontal-group__title [ text text_cardTime ]">Включится в 18:00</p>
+					</div>
 				</div>
-				<div class="sectionDevice__innerCard">
-					<p class="sectionDevice__titleCard [ title title_card ]">Xiaomi Yeelight LED Smart Bulb</p>
-					<p class="sectionDevice__titleCard [ text text_cardTime ]">Включится в 17:00</p>
-				</div>					
+				<div class="horizontal-group__modal modal" id="simple-modal-5" name="close-modal-5">
+					<div class="modal__content-box">
+						<div class="modal__content">
+							<div class="modal__content-wrap">
+								<div class="modal__content-inner-wrap">
+									<h1 class="modal__title [ title title_inner ]">LIFX Mini Day & Dusk A60 E27</h1>
+									<p class="text text_modal">Включится в 18:00</p>
+								</div>
+								<div class="modal__img-box">
+									<img src="./common/card/images/icon_sun@2x.png" alt="#" class="modal__img">
+								</div>
+							</div>
+							<div class="modal__content-tool">
+
+							</div>
+						</div>
+						<div class="modal__btn-box">
+							<button class="modal-btn modal-btn_ok [ text text_btn ]"
+								data-modal="close-modal-5">Применить</button>
+							<button class="modal-btn modal-btn_cancel [ text text_btn ]"
+								data-modal="close-modal-5">Закрыть</button>
+						</div>
+					</div>
+				</div>
 			</div>
-			<div class="sectionDevice__scrollCard card">
-				<div class="sectionDevice__innerCard">
-					<img src="/common/card/images/icon_sun@1x.png" alt="#" class="sectionDevice__imageCard">
+			<div class="horizontal-group__item card">
+				<div class="horizontal-group__inner-wrap [ modal modal_open ]" data-modal="simple-modal-6">
+					<div class="horizontal-group__content">
+						<img src="./common/card/images/icon_sun_2@1x.png" alt="#" class="horizontal-group__img">
+						<img src="./common/card/images/icon_sun@1x.png" alt="#" class="horizontal-group__img">
+					</div>
+					<div class="horizontal-group__content">
+						<p class="horizontal-group__title [ title title_card ]">Xiaomi Mi Air Purifier 2S</p>
+						<p class="horizontal-group__title [ text text_cardTime ]">Включено</p>
+					</div>
 				</div>
-				<div class="sectionDevice__innerCard">
-					<p class="sectionDevice__titleCard [ title title_card ]">Xiaomi Yeelight LED Smart Bulb</p>
-					<p class="sectionDevice__titleCard [ text text_cardTime ]">Включится в 17:00</p>
-				</div>					
+				<div class="horizontal-group__modal modal" id="simple-modal-6" name="close-modal-6">
+					<div class="modal__content-box">
+						<div class="modal__content">
+							<div class="modal__content-wrap">
+								<div class="modal__content-inner-wrap">
+									<h1 class="modal__title [ title title_inner ]">Xiaomi Mi Air Purifier 2S</h1>
+									<p class="text text_modal">Включено</p>
+								</div>
+								<div class="modal__img-box">
+									<img src="./common/card/images/icon_sun_2@2x.png" alt="#" class="modal__img">
+								</div>
+							</div>
+							<div class="modal__content-tool">
+
+							</div>
+						</div>
+						<div class="modal__btn-box">
+							<button class="modal-btn modal-btn_ok [ text text_btn ]"
+								data-modal="close-modal-6">Применить</button>
+							<button class="modal-btn modal-btn_cancel [ text text_btn ]"
+								data-modal="close-modal-6">Закрыть</button>
+						</div>
+					</div>
+				</div>
 			</div>
-			<div class="sectionDevice__scrollCard card">
-				<div class="sectionDevice__innerCard">
-					<img src="/common/card/images/icon_sun@1x.png" alt="#" class="sectionDevice__imageCard">
+			<div class="horizontal-group__item card">
+				<div class="horizontal-group__inner-wrap [ modal modal_open ]" data-modal="simple-modal-7">
+					<div class="horizontal-group__content">
+						<img src="./common/card/images/icon_sun@1x.png" alt="#" class="horizontal-group__img">
+						<img src="./common/card/images/icon_sun_2@1x.png" alt="#" class="horizontal-group__img">
+					</div>
+					<div class="horizontal-group__content">
+						<p class="horizontal-group__title [ title title_card ]">Philips Zhirui</p>
+						<p class="horizontal-group__title [ text text_cardTime ]">Выключено</p>
+					</div>
 				</div>
-				<div class="sectionDevice__innerCard">
-					<p class="sectionDevice__titleCard [ title title_card ]">Xiaomi Yeelight LED Smart Bulb</p>
-					<p class="sectionDevice__titleCard [ text text_cardTime ]">Включится в 17:00</p>
-				</div>					
+				<div class="horizontal-group__modal modal" id="simple-modal-7" name="close-modal-7">
+					<div class="modal__content-box">
+						<div class="modal__content">
+							<div class="modal__content-wrap">
+								<div class="modal__content-inner-wrap">
+									<h1 class="modal__title [ title title_inner ]">Philips Zhirui</h1>
+									<p class="text text_modal">Выключено</p>
+								</div>
+								<div class="modal__img-box">
+									<img src="./common/card/images/icon_sun@2x.png" alt="#" class="modal__img">
+								</div>
+							</div>
+							<div class="modal__content-tool">
+
+							</div>
+						</div>
+						<div class="modal__btn-box">
+							<button class="modal-btn modal-btn_ok [ text text_btn ]"
+								data-modal="close-modal-7">Применить</button>
+							<button class="modal-btn modal-btn_cancel [ text text_btn ]"
+								data-modal="close-modal-7">Закрыть</button>
+						</div>
+					</div>
+				</div>
 			</div>
-			<div class="sectionDevice__scrollCard card">
-				<div class="sectionDevice__innerCard">
-					<img src="/common/card/images/icon_sun@1x.png" alt="#" class="sectionDevice__imageCard">
+			<div class="horizontal-group__item card">
+				<div class="horizontal-group__inner-wrap [ modal modal_open ]" data-modal="simple-modal-8">
+					<div class="horizontal-group__content">
+						<img src="./common/card/images/icon_sun@1x.png" alt="#" class="horizontal-group__img">
+						<img src="./common/card/images/icon_sun_2@1x.png" alt="#" class="horizontal-group__img">
+					</div>
+					<div class="horizontal-group__content">
+						<p class="horizontal-group__title [ title title_card ]">Xiaomi Yeelight LED Smart Bulb</p>
+						<p class="horizontal-group__title [ text text_cardTime ]">Включится в 18:30</p>
+					</div>
 				</div>
-				<div class="sectionDevice__innerCard">
-					<p class="sectionDevice__titleCard [ title title_card ]">Xiaomi Yeelight LED Smart Bulb</p>
-					<p class="sectionDevice__titleCard [ text text_cardTime ]">Включится в 17:00</p>
-				</div>					
-			</div> <!-- TEST -->
-			<div class="sectionDevice__scrollCard card visibility">
-				<div class="sectionDevice__innerCard">
-					<img src="/common/card/images/icon_sun@1x.png" alt="#" class="sectionDevice__imageCard">
+				<div class="horizontal-group__modal modal" id="simple-modal-8" name="close-modal-8">
+					<div class="modal__content-box">
+						<div class="modal__content">
+							<div class="modal__content-wrap">
+								<div class="modal__content-inner-wrap">
+									<h1 class="modal__title [ title title_inner ]">Xiaomi Yeelight LED Smart Bulb</h1>
+									<p class="text text_modal">Включится в 18:30</p>
+								</div>
+								<div class="modal__img-box">
+									<img src="./common/card/images/icon_sun@2x.png" alt="#" class="modal__img">
+								</div>
+							</div>
+							<div class="modal__content-tool">
+								<div class="modal__radio-group radioGroup">
+									<label class="radioGroup__item">
+										<input name="modal3Button" value="Вручную" type="radio"
+											class="radioGroup__input" checked>
+										<div class="radioGroup__text text [ text text_smallSize ]">Вручную</div>
+									</label>
+									<label class="radioGroup__item">
+										<input name="modal3Button" value="Дневной свет" type="radio"
+											class="radioGroup__input">
+										<div class="radioGroup__text text [ text text_smallSize ]">Дневной свет</div>
+									</label>
+									<label class="radioGroup__item">
+										<input name="modal3Button" value="Вечерний свет" type="radio"
+											class="radioGroup__input">
+										<div class="radioGroup__text text [ text text_smallSize ]">Вечерний свет</div>
+									</label>
+									<label class="radioGroup__item">
+										<input name="modal3Button" value="Рассвет" type="radio"
+											class="radioGroup__input">
+										<div class="radioGroup__text text [ text text_smallSize ]">Рассвет</div>
+									</label>
+								</div>
+								<div class="modal__swipe-tool">
+									<div class="modal__drag-button"></div>
+									<img src="./common/modal/images/icon_sun_max.png" alt="#" class="modal__img-sun-min">
+									<img src="./common/modal/images/icon_sun_min.png" alt="#" class="modal__img-sun-max">
+								</div>
+							</div>
+						</div>
+						<div class="modal__btn-box">
+							<button class="modal-btn modal-btn_ok [ text text_btn ]"
+								data-modal="close-modal-8">Применить</button>
+							<button class="modal-btn modal-btn_cancel [ text text_btn ]"
+								data-modal="close-modal-8">Закрыть</button>
+						</div>
+					</div>
 				</div>
-				<div class="sectionDevice__innerCard">
-					<p class="sectionDevice__titleCard [ title title_card ]">Xiaomi Yeelight LED Smart Bulb</p>
-					<p class="sectionDevice__titleCard [ text text_cardTime ]">Включится в 17:00</p>
-				</div>					
 			</div>
-			<div class="sectionDevice__scrollCard card visibility">
-				<div class="sectionDevice__innerCard">
-					<img src="/common/card/images/icon_sun@1x.png" alt="#" class="sectionDevice__imageCard">
+			<div class="horizontal-group__item card">
+				<div class="horizontal-group__inner-wrap [ modal modal_open ]" data-modal="simple-modal-9">
+					<div class="horizontal-group__content">
+						<img src="./common/card/images/icon_sun@1x.png" alt="#" class="horizontal-group__img">
+						<img src="./common/card/images/icon_sun_2@1x.png" alt="#" class="horizontal-group__img">
+					</div>
+					<div class="horizontal-group__content">
+						<p class="horizontal-group__title [ title title_card ]">Xiaomi Yeelight LED Smart Bulb</p>
+						<p class="horizontal-group__title [ text text_cardTime ]">Включится в 18:30</p>
+					</div>
 				</div>
-				<div class="sectionDevice__innerCard">
-					<p class="sectionDevice__titleCard [ title title_card ]">Xiaomi Yeelight LED Smart Bulb</p>
-					<p class="sectionDevice__titleCard [ text text_cardTime ]">Включится в 17:00</p>
-				</div>					
+				<div class="horizontal-group__modal modal" id="simple-modal-9" name="close-modal-9">
+					<div class="modal__content-box">
+						<div class="modal__content">
+							<div class="modal__content-wrap">
+								<div class="modal__content-inner-wrap">
+									<h1 class="modal__title [ title title_inner ]">Xiaomi Yeelight LED Smart Bulb</h1>
+									<p class="text text_modal">Включится в 18:30</p>
+								</div>
+								<div class="modal__img-box">
+									<img src="./common/card/images/icon_sun@2x.png" alt="#" class="modal__img">
+								</div>
+							</div>
+							<div class="modal__content-tool">
+								<div class="modal__radio-group radioGroup">
+									<label class="radioGroup__item">
+										<input name="modal4Button" value="Вручную" type="radio"
+											class="radioGroup__input" checked>
+										<div class="radioGroup__text text [ text text_smallSize ]">Вручную</div>
+									</label>
+									<label class="radioGroup__item">
+										<input name="modal4Button" value="Дневной свет" type="radio"
+											class="radioGroup__input">
+										<div class="radioGroup__text text [ text text_smallSize ]">Дневной свет</div>
+									</label>
+									<label class="radioGroup__item">
+										<input name="modal4Button" value="Вечерний свет" type="radio"
+											class="radioGroup__input">
+										<div class="radioGroup__text text [ text text_smallSize ]">Вечерний свет</div>
+									</label>
+									<label class="radioGroup__item">
+										<input name="modal4Button" value="Рассвет" type="radio"
+											class="radioGroup__input">
+										<div class="radioGroup__text text [ text text_smallSize ]">Рассвет</div>
+									</label>
+								</div>
+								<div class="modal__swipe-tool">
+									<div class="modal__drag-button"></div>
+									<img src="./common/modal/images/icon_sun_max.png" alt="#" class="modal__img-sun-min">
+									<img src="./common/modal/images/icon_sun_min.png" alt="#" class="modal__img-sun-max">
+								</div>
+							</div>
+						</div>
+						<div class="modal__btn-box">
+							<button class="modal-btn modal-btn_ok [ text text_btn ]"
+								data-modal="close-modal-9">Применить</button>
+							<button class="modal-btn modal-btn_cancel [ text text_btn ]"
+								data-modal="close-modal-9">Закрыть</button>
+						</div>
+					</div>
+				</div>
 			</div>
-			<div class="sectionDevice__scrollCard card visibility">
-				<div class="sectionDevice__innerCard">
-					<img src="/common/card/images/icon_sun@1x.png" alt="#" class="sectionDevice__imageCard">
+			<div class="horizontal-group__item card">
+				<div class="horizontal-group__inner-wrap [ modal modal_open ]" data-modal="simple-modal-10">
+					<div class="horizontal-group__content">
+						<img src="./common/card/images/icon_sun@1x.png" alt="#" class="horizontal-group__img">
+						<img src="./common/card/images/icon_sun_2@1x.png" alt="#" class="horizontal-group__img">
+					</div>
+					<div class="horizontal-group__content">
+						<p class="horizontal-group__title [ title title_card ]">Xiaomi Yeelight LED Smart Bulb</p>
+						<p class="horizontal-group__title [ text text_cardTime ]">Включится в 18:30</p>
+					</div>
 				</div>
-				<div class="sectionDevice__innerCard">
-					<p class="sectionDevice__titleCard [ title title_card ]">Xiaomi Yeelight LED Smart Bulb</p>
-					<p class="sectionDevice__titleCard [ text text_cardTime ]">Включится в 17:00</p>
-				</div>					
+				<div class="horizontal-group__modal modal" id="simple-modal-10" name="close-modal-10">
+					<div class="modal__content-box">
+						<div class="modal__content">
+							<div class="modal__content-wrap">
+								<div class="modal__content-inner-wrap">
+									<h1 class="modal__title [ title title_inner ]">Xiaomi Yeelight LED Smart Bulb</h1>
+									<p class="text text_modal">Включится в 18:30</p>
+								</div>
+								<div class="modal__img-box">
+									<img src="./common/card/images/icon_sun@2x.png" alt="#" class="modal__img">
+								</div>
+							</div>
+							<div class="modal__content-tool">
+								<div class="modal__radio-group radioGroup">
+									<label class="radioGroup__item">
+										<input name="modal5Button" value="Вручную" type="radio"
+											class="radioGroup__input" checked>
+										<div class="radioGroup__text text [ text text_smallSize ]">Вручную</div>
+									</label>
+									<label class="radioGroup__item">
+										<input name="modal5Button" value="Дневной свет" type="radio"
+											class="radioGroup__input">
+										<div class="radioGroup__text text [ text text_smallSize ]">Дневной свет</div>
+									</label>
+									<label class="radioGroup__item">
+										<input name="modal5Button" value="Вечерний свет" type="radio"
+											class="radioGroup__input">
+										<div class="radioGroup__text text [ text text_smallSize ]">Вечерний свет</div>
+									</label>
+									<label class="radioGroup__item">
+										<input name="modal5Button" value="Рассвет" type="radio"
+											class="radioGroup__input">
+										<div class="radioGroup__text text [ text text_smallSize ]">Рассвет</div>
+									</label>
+								</div>
+								<div class="modal__swipe-tool">
+									<div class="modal__drag-button"></div>
+									<img src="./common/modal/images/icon_sun_max.png" alt="#" class="modal__img-sun-min">
+									<img src="./common/modal/images/icon_sun_min.png" alt="#" class="modal__img-sun-max">
+								</div>
+							</div>
+						</div>
+						<div class="modal__btn-box">
+							<button class="modal-btn modal-btn_ok [ text text_btn ]"
+								data-modal="close-modal-10">Применить</button>
+							<button class="modal-btn modal-btn_cancel [ text text_btn ]"
+								data-modal="close-modal-10">Закрыть</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="horizontal-group__item card">
+				<div class="horizontal-group__inner-wrap [ modal modal_open ]" data-modal="simple-modal-11">
+					<div class="horizontal-group__content">
+						<img src="./common/card/images/icon_sun@1x.png" alt="#" class="horizontal-group__img">
+						<img src="./common/card/images/icon_sun_2@1x.png" alt="#" class="horizontal-group__img">
+					</div>
+					<div class="horizontal-group__content">
+						<p class="horizontal-group__title [ title title_card ]">Xiaomi Yeelight LED Smart Bulb</p>
+						<p class="horizontal-group__title [ text text_cardTime ]">Включится в 18:30</p>
+					</div>
+				</div>
+				<div class="horizontal-group__modal modal" id="simple-modal-11" name="close-modal-11">
+					<div class="modal__content-box">
+						<div class="modal__content">
+							<div class="modal__content-wrap">
+								<div class="modal__content-inner-wrap">
+									<h1 class="modal__title [ title title_inner ]">Xiaomi Yeelight LED Smart Bulb</h1>
+									<p class="text text_modal">Включится в 18:30</p>
+								</div>
+								<div class="modal__img-box">
+									<img src="./common/card/images/icon_sun@2x.png" alt="#" class="modal__img">
+								</div>
+							</div>
+							<div class="modal__content-tool">
+								<div class="modal__radio-group radioGroup">
+									<label class="radioGroup__item">
+										<input name="modal6Button" value="Вручную" type="radio"
+											class="radioGroup__input" checked>
+										<div class="radioGroup__text text [ text text_smallSize ]">Вручную</div>
+									</label>
+									<label class="radioGroup__item">
+										<input name="modal6Button" value="Дневной свет" type="radio"
+											class="radioGroup__input">
+										<div class="radioGroup__text text [ text text_smallSize ]">Дневной свет</div>
+									</label>
+									<label class="radioGroup__item">
+										<input name="modal6Button" value="Вечерний свет" type="radio"
+											class="radioGroup__input">
+										<div class="radioGroup__text text [ text text_smallSize ]">Вечерний свет</div>
+									</label>
+									<label class="radioGroup__item">
+										<input name="modal6Button" value="Рассвет" type="radio"
+											class="radioGroup__input">
+										<div class="radioGroup__text text [ text text_smallSize ]">Рассвет</div>
+									</label>
+								</div>
+								<div class="modal__swipe-tool">
+									<div class="modal__drag-button"></div>
+									<img src="./common/modal/images/icon_sun_max.png" alt="#" class="modal__img-sun-min">
+									<img src="./common/modal/images/icon_sun_min.png" alt="#" class="modal__img-sun-max">
+								</div>
+							</div>
+						</div>
+						<div class="modal__btn-box">
+							<button class="modal-btn modal-btn_ok [ text text_btn ]"
+								data-modal="close-modal-11">Применить</button>
+							<button class="modal-btn modal-btn_cancel [ text text_btn ]"
+								data-modal="close-modal-11">Закрыть</button>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -353,10 +957,11 @@
 				<a href="#">Условия использования</a>
 			</div>
 			<div class="footer__part footer__part_yandex">
-				© 2001–2017  ООО «Яндекс»
+				© 2001–2017 ООО «Яндекс»
 			</div>
 		</div>
 	</footer>
 	<script src="js/scripts.min.js"></script>
 </body>
+
 </html>

@@ -21,42 +21,10 @@
 
     &__item
         display: grid
-
         cursor: pointer
 
-        &_fixed-height
-            display: grid
-
-            height: 120px
-
-        &_fixed-height:first-child
-            margin-top: 25px
-
-        &_fixed-height:nth-child(3)::before
-            display: block
-
-            position: absolute
-            margin-top: 1px
-
-            content: ""
-
-            background: #F7F7F7 url("/blocks/heading/images/ M.svg") no-repeat center
-
-            width: 200px
-            height: 35px
-
-            border-top-left-radius: 20px
-            border-top-right-radius: 20px
-
-        &_fixed-height:hover
-            cursor: pointer
-
     &__inner-box
-        display: grid
-
-        justify-content: flex-start
-
-        letter-spacing: 0
+        
 
     &__img
         padding: 14px 0 0 14px

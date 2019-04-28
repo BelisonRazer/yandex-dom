@@ -1,0 +1,209 @@
+@import "../sass/vars.sass";
+    
+    
+.modal
+
+
+
+    &_open
+
+
+    &_opened
+        display: block
+
+        position: fixed
+
+        z-index: 1
+
+        left: 0
+        top: 0
+
+        height: 100%
+        width: 100%
+
+        overflow: hidden
+        // background: rgba(51,51,51,0.50)
+        background-color: rgba(0,0,0,0.5)
+
+    &__content-box
+        display: flex
+
+        flex-direction: column
+
+        width: 100vw
+        height: 100vh
+
+        justify-content: center
+        align-items: center    
+
+    &__content
+        width: 580px
+        max-height: 293px
+
+        padding: 25px
+
+        background-color: #ffffff
+        border-radius: 20px
+
+    &__content-wrap
+        display: flex
+
+        flex-direction: row
+        justify-content: space-between
+
+        margin-bottom: 10px
+        
+    &__title
+        margin-bottom: 6px
+
+    &__img-box
+        display: flex
+
+        flex-direction: row
+
+        align-items: center
+
+    &__img
+
+
+    &__content-tool
+        margin: 0 auto
+
+        text-align: center
+
+    //xiaomi warm floor
+    &__img-oval
+        margin: 0 0 0 11.5%
+
+    &__img-oval-arrow
+        position: relative
+
+        transform: rotate(105deg)
+
+        top: -17px
+        right: -82px
+
+    &__img-oval-part
+        position: relative
+
+        top: -14px
+        left: -71px
+
+        background: #ffffff
+        
+    &__btn-box
+        display: flex
+
+        width: 630px
+
+        flex-direction: row
+
+    &__circle-inner-oval
+        position: relative
+        
+        width: 178px
+        height: 178px
+
+        background: #FEFEFE
+        box-shadow: 0 2px 4px 0 rgba(134,121,71,0.45)
+        border-radius: 50%
+
+        top: -207px
+        left: 200px
+
+        z-index: 20
+
+    &__temperature
+        position: relative
+
+        top: 34.5px
+
+    &__hidden-part-oval
+        position: relative
+
+        background: #ffffff
+
+        width: 115.4px
+        height: 40.3px
+
+        top: -218px
+        right: -233px
+
+        z-index: 10
+
+        border-radius: 15px
+
+    //xiaomi light
+    &__radio-group
+        display: grid
+
+        grid-column: col2-list
+        grid-auto-flow: column
+        grid-gap: 10px
+
+        justify-content: flex-start
+        align-content: center
+
+        margin-bottom: 20px
+
+    &__swipe-tool
+        border-radius: 30px
+
+        width: 100%
+        height: 60px
+
+        background-image: linear-gradient(-85deg, #FF9E00 2%, #FFE682 98%)
+
+        //elgato eve deegree connected
+        &_temperature-color
+            background-image: linear-gradient(-90deg, #F76B1C 2%, #FFD800 51%, #068FFF 100%)
+
+    &__img-sun-min
+        position: relative
+
+        right: 15px
+        bottom: 48px
+
+        margin-right: -100%
+
+    &__img-sun-max
+        position: relative
+
+        left: 15px
+        bottom: 48px
+
+    &__drag-button
+        position: relative
+        
+        left: 60%
+
+        box-shadow: inset 0 0px 10px -2px rgba(0,0,0,0.50)
+
+        border: 4px solid #FFFFFF
+        border-radius: 50%
+        box-sizing: border-box
+
+        width: 60px
+        height: 60px
+
+    &__drag-button + &__drag-button
+        border: 3px solid rgba(51,51,51,0.10)
+
+    //elgato eve deegree connected
+    &__text-sun-min
+        position: relative
+
+        left: 15px
+        bottom: 44px
+
+        // margin-right: -100%
+        text-align: left
+
+    &__text-sun-max
+        position: relative
+
+        left: -15px
+        bottom: 73px
+
+        text-align: right
+    

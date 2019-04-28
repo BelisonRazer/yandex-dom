@@ -2,6 +2,10 @@
 @import "app/blocks/heading/styles/heading.sass";
 @import "app/blocks/sectionDevice/styles/sectionDevice.sass";
 @import "app/blocks/footer/styles/footer.sass";
+@import "app/common/modal-btn/styles/modal-btn.sass";
+@import "app/common/horizontal-group/styles/horizontal-group.sass";
+@import "app/common/modal/styles/modal.sass";
+@import "app/common/queue-group/styles/queue-group.sass";
 @import "app/common/checkbox-group/styles/checkbox-group.sass";
 @import "app/common/radioGroup/styles/radioGroup.sass";
 @import "app/common/card/styles/card.sass";
@@ -22,6 +26,7 @@
 	color: #fff
 
 body
+	-webkit-animation: bugfix infinite 1s
 	background-color: #ffffff
 	font-size: 16px
 	min-width: 320px
@@ -37,6 +42,10 @@ body
 			border-color: red
 		&:required:valid
 			border-color: green
+
+@-webkit-keyframes bugfix
+    to
+      padding: 0
 
 .img-responsive
 	display: block
@@ -55,3 +64,298 @@ b, strong
 	display: none !important
 
 // @import "media" Always at the end
+
+	
+
+@media only screen and (max-width: 1299.98px)
+
+	.nav
+		display: block
+	
+	.header
+		display: flex
+
+		margin: 0
+
+		&__navigation
+			max-width: 1299.98px
+
+			justify-content: flex-start
+
+			grid-template-columns: [col-menu] 630px
+
+			// margin-left: 25px
+
+		&__menu
+			width: 100%
+
+			grid-template-columns: repeat(2, 1fr)
+
+		&__menu > a:not(nav > a)
+			display: none
+
+		&__outline
+			display: none
+
+		&__item1
+			grid-column: 1
+
+	.heading
+		grid-template-columns: 630px
+
+		&__left-box
+			grid-column: 1
+
+			grid-template-columns: 1fr
+			grid-template-rows: 330px
+
+		&__right-box
+			grid-column: 1
+
+			grid-template-rows: 70px auto
+
+		&__checkbox-group
+			grid-template-rows: repeat(2, 100px)
+
+		&__title_main
+			display: none
+
+		&__content-left
+			grid-row: 1
+
+		&__content-right
+
+	.sectionDevice
+		grid-template-columns: [space-l] 1fr 630px [space-r] 1fr
+		
+		&__boxFavoriteDevice
+			grid-template-columns: [col1-title] 207px [col2-list] auto
+
+		&__boxForm
+			display: none
+
+		&__radioGroup
+			justify-content: flex-end
+
+			grid-gap: 15px
+
+	.horizontal-group__item:first-child
+    	margin-left: calc((100vw - 630px) / 2)
+
+	.footer
+		grid-template-columns: [col-boxParts] 630px
+
+		min-height: calc(100vh - 995px)
+
+
+@media only screen and (max-width: 669.98px)
+
+	.header
+		justify-content: flex-start
+		margin: 0 25px
+
+		&__navigation
+			grid-template-columns: [col-menu] 1fr
+
+			width: 100%
+
+	.heading
+		grid-template-columns: auto
+		// margin-left: 25px
+		// margin-right: 25px
+
+		//LEFT
+		&__left-box
+			grid-column: 1
+
+			grid-template-columns: 1fr
+			grid-template-rows: auto
+
+			margin: 0 25px
+
+			max-height: 293px
+
+		&__content-left
+			grid-template-columns: auto
+			grid-template-rows: auto
+
+		&__image
+			object-fit: fill
+			height: 100%
+
+			border-radius: 25px
+
+		&__vertical-queue-box
+    		display: none
+
+		&__inner-content-left
+			grid-row: 1
+			grid-column: 1
+			grid-template-columns: auto
+			grid-template-rows: 30px 6px 5px 15px 63px
+
+			margin: 21px 0 0 20px
+
+		&__horizontal-group_mobile
+			display: flex
+
+			height: 136px
+    		
+			flex-direction: row
+			flex-wrap: nowrap
+			justify-content: flex-start
+
+			overflow-x: scroll
+			-ms-overflow-style: none
+        	overflow: -moz-hidden-unscrollable
+
+		&__horizontal-group_mobile::-webkit-scrollbar
+     		width: 0
+
+		&__weather-home::before
+			font-size: 24px
+
+		&__weather-street
+			padding-left: 65px
+
+		&__weather-street::before
+			font-size: 24px
+
+		&__weather-street::after
+			padding: 0 0 5px 26px
+
+			background-size: 17.2px
+
+			left: -10px
+			top: 17px
+
+		//RIGHT
+		&__right-box
+			grid-template-rows: 70px 100px
+			grid-template-columns: auto
+
+		&__form-box
+			display: none
+
+		&__title-right
+			margin-left: 25px
+
+		&__checkbox-group
+			display: flex
+
+			height: 120px
+    		
+			flex-direction: row
+			flex-wrap: nowrap
+			justify-content: flex-start
+
+			overflow-x: scroll
+			-ms-overflow-style: none
+        	overflow: -moz-hidden-unscrollable
+
+		&__checkbox-group::-webkit-scrollbar
+        	width: 0
+
+
+	.footer
+		min-height: calc(100vh - 835px)
+
+		margin-bottom: 0
+
+		&__boxParts
+			grid-template-columns: auto
+    		grid-template-rows: repeat(2, 1fr)
+
+			justify-content: center
+
+		&__part
+			grid-column: 1
+			grid-row: 1
+
+			grid-gap: 5px
+
+			&_yandex
+				grid-row: 2
+
+				justify-self: center
+
+
+	.title_inner
+		font-size: 18px
+
+	.text
+		font-size: 12px
+
+	.text_opacity
+		font-size: 12px
+
+	.nav-toggle
+		margin-right: 5px
+
+
+	.sectionDevice
+		grid-template-areas: "favorite" "device"
+		grid-template-columns: auto
+
+		&__boxFavoriteDevice
+			justify-content: space-between
+
+			margin-left: 25px
+			margin-right: 25px
+
+	.radioGroup__item:not(:first-child)
+		display: none
+
+	.horizontal-group__item:first-child
+		margin-left: 25px
+
+	.checkbox-group__item
+		width: 200px
+		height: 100px
+
+		min-width: 200px
+
+	.checkbox-group__item:not(:last-child)
+		margin-right: 15px
+
+	.checkbox-group__item:first-child
+		margin-left: 25px
+
+	.checkbox-group__input
+		right: 100px
+    	top: 0px
+
+	.nav
+		width: 220px
+		min-width: 220px
+
+		// right: -260px
+
+	html
+		overflow-x: hidden
+
+@media only screen and (max-width: 414.98px) //414
+
+	
+
+	
+	.heading
+		grid-gap: 6px
+
+		&__inner-content-left
+			grid-template-rows: 30px 6px 5px 15px 60px
+
+		&__horizontal-group_mobile
+			padding: 0 0 20px 0
+
+	.footer
+		// min-height: calc(100vh - 878px)
+		height: 100%
+		min-height: 100%
+		display: flex
+		align-content: flex-end
+
+		margin-top: 20px
+
+	.open-nav-btn:before
+ 		// left: 22px
